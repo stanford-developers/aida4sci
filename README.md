@@ -75,5 +75,10 @@ quarter is past, the block disappears rather than showing something stale.
 - `speakers/*.yml` — one file per quarter; the single source of truth
   for the schedule
 - `ejs/speaker.ejs` — template that renders each talk card
-- `images/` — logo (`logo-mark.svg`, `logo-lockup.svg`), hero
-  background, speaker photos
+- `images/` — logo, page mastheads, speaker photos; see
+  `images/README.md` for the art direction and how to regenerate them
+- `tools/` — the generators that produce the artwork and bundle the fonts.
+  The mastheads and logo are *generated, not hand-drawn*: change the
+  parameters and re-run rather than editing SVG by hand
+- `fonts/` + `fonts.css` — bundled webfonts, so the site needs no CDN
+- `js/convergence.js` — the home page's live hero animation
