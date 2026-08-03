@@ -11,6 +11,15 @@ quarto preview   # live-reloading local server
 quarto render    # builds the site into _site/
 ```
 
+## "Up next" on the home page
+
+The home page shows the next seminar automatically — there is nothing to
+update by hand. `ejs/upnext.ejs` reads the same quarter YAML file as the
+schedule and picks the next *confirmed* speaker whose date has not passed.
+If the nearest dates are still unbooked it falls back to the next
+scheduled date and says the speaker is not announced yet; once the whole
+quarter is past, the block disappears rather than showing something stale.
+
 ## Adding a speaker
 
 1. Open the current quarter's data file, e.g. `speakers/fall-2026.yml`.

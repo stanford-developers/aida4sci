@@ -1,0 +1,36 @@
+<%
+// Picks the next seminar still to come. Prefers the next *confirmed*
+// speaker; if the nearest dates are still unbooked it falls back to the next
+// scheduled date so the block says something true rather than nothing.
+function asDate(v) { return v instanceof Date ? v : new Date(String(v)); }
+function valid(d) { return d && !isNaN(d.getTime()); }
+var today = new Date();
+today.setHours(0, 0, 0, 0);
+var upcoming = items
+  .filter(function (it) { return valid(asDate(it.date)) && asDate(it.date) >= today; })
+  .sort(function (a, b) { return asDate(a.date) - asDate(b.date); });
+var named = upcoming.filter(function (it) { return it.name; });
+var next = named[0] || upcoming[0];
+%>
+<% if (next && next.name) { %>
+<section class="upnext">
+<div class="upnext-photo">
+<img src="<%= next.photo ?? 'images/speakers/placeholder.svg' %>" alt="Photo of <%= next.name %>">
+</div>
+<div class="upnext-body">
+<span class="upnext-eyebrow">Up next &middot; <%= next.display_date %></span>
+<h2 class="upnext-name"><%= next.name %></h2>
+<% if (next.affiliation) { %><div class="upnext-affiliation"><%= next.affiliation %></div><% } %>
+<% if (next.title) { %><p class="upnext-talk"><%= next.title %></p><% } %>
+<a class="upnext-link" href="schedule.html">See the full schedule</a>
+</div>
+</section>
+<% } else if (next) { %>
+<section class="upnext upnext-tba">
+<div class="upnext-body">
+<span class="upnext-eyebrow">Up next &middot; <%= next.display_date %></span>
+<p class="upnext-talk">The speaker for this date has not been announced yet.</p>
+<a class="upnext-link" href="schedule.html">See the full schedule</a>
+</div>
+</section>
+<% } %>

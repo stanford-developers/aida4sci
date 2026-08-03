@@ -289,6 +289,85 @@ h1, h2, h3 {
   }
 }
 
+// --------------------------------------------------------------- up next
+//
+// The single most perishable thing on the site, so it sits directly under the
+// hero and is the only element on paper allowed an ember edge.
+
+.upnext {
+  display: grid;
+  grid-template-columns: 132px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  background: $fog;
+  border: 1px solid $rule;
+  border-left: 4px solid $ember;
+  border-radius: 0 0.6rem 0.6rem 0;
+  padding: 1.5rem 1.75rem;
+  margin: 2.5rem 0 0.5rem;
+
+  &.upnext-tba {
+    grid-template-columns: 1fr;
+  }
+
+  .upnext-photo img {
+    width: 132px;
+    height: 132px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid $rule;
+  }
+
+  .upnext-eyebrow {
+    display: block;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: $cardinal;
+    margin-bottom: 0.4rem;
+  }
+
+  .upnext-name {
+    font-family: $headings-font-family;
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.1;
+    margin: 0 0 0.1rem;
+    border-bottom: none;
+  }
+
+  .upnext-affiliation {
+    color: $stone;
+    margin-bottom: 0.5rem;
+  }
+
+  .upnext-talk {
+    font-size: 1.05rem;
+    color: $cool-grey;
+    margin: 0 0 0.75rem;
+  }
+
+  .upnext-link {
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(140, 21, 21, 0.3);
+
+    &:hover { border-bottom-color: $cardinal; }
+  }
+}
+
+@media (max-width: 575px) {
+  .upnext {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.25rem 1.35rem;
+
+    .upnext-photo img { width: 108px; height: 108px; }
+  }
+}
+
 // ------------------------------------------------------------ section heads
 
 .section-head {

@@ -1,6 +1,12 @@
 ---
 pagetitle: "AI + Data for Science · Stanford University"
 toc: false
+listing:
+  - id: upnext
+    template: ejs/upnext.ejs
+    contents:
+      - speakers/fall-2026.yml
+    sort: "date asc"
 include-after-body:
   text: |
     <script src="js/convergence.js" defer></script>
@@ -28,6 +34,9 @@ include-after-body:
   </div>
 </section>
 ```
+
+::: {#upnext}
+:::
 
 ::: {.section-head}
 About the seminar
