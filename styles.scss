@@ -104,7 +104,7 @@ h1, h2, h3 {
 .hero-night {
   @include bleed-aligned;
   position: relative;
-  min-height: min(74vh, 620px);
+  min-height: min(46vh, 380px);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -122,7 +122,7 @@ h1, h2, h3 {
   .hero-content {
     position: relative;   // above the canvas
     width: 100%;
-    padding: 4.5rem 0 4rem;
+    padding: 1.75rem 0 1.5rem;
   }
 
   .hero-eyebrow {
@@ -133,18 +133,18 @@ h1, h2, h3 {
     letter-spacing: 0.2em;
     text-transform: uppercase;
     color: $ember;
-    margin-bottom: 1.1rem;
+    margin-bottom: 0.8rem;
   }
 
   .hero-title {
     font-family: $headings-font-family;
     font-weight: 600;
-    font-size: clamp(2.9rem, 7.4vw, 5.6rem);
-    line-height: 0.98;
-    letter-spacing: -0.025em;
+    font-size: clamp(2.1rem, 4.4vw, 3.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.022em;
     color: #FAF6F0;
-    margin: 0 0 1.1rem;
-    max-width: 15ch;
+    margin: 0 0 0.75rem;
+    max-width: 22ch;   // one line on desktop; wraps on its own when narrow
 
     em {
       font-style: italic;
@@ -153,18 +153,18 @@ h1, h2, h3 {
   }
 
   .hero-tagline {
-    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+    font-size: clamp(1.02rem, 1.5vw, 1.2rem);
     line-height: 1.5;
     color: rgba(240, 233, 224, 0.72);
     max-width: 36rem;
-    margin: 0 0 2rem;
+    margin: 0 0 1.15rem;
   }
 
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-bottom: 2.75rem;
+    margin-bottom: 1.4rem;
   }
 
   .btn-ember {
@@ -172,7 +172,7 @@ h1, h2, h3 {
     color: #221A10;
     border: none;
     font-weight: 600;
-    padding: 0.62rem 1.4rem;
+    padding: 0.55rem 1.3rem;
     border-radius: 0.3rem;
     text-decoration: none;
     transition: transform 0.15s ease, background 0.15s ease;
@@ -184,7 +184,7 @@ h1, h2, h3 {
     color: rgba(240, 233, 224, 0.9);
     border: 1px solid rgba(240, 233, 224, 0.3);
     font-weight: 500;
-    padding: 0.62rem 1.4rem;
+    padding: 0.55rem 1.3rem;
     border-radius: 0.3rem;
     text-decoration: none;
     transition: border-color 0.15s ease, background 0.15s ease;
@@ -192,32 +192,34 @@ h1, h2, h3 {
     &:hover { border-color: $ember; background: rgba(233, 160, 62, 0.08); color: #fff; }
   }
 
-  // the particulars, set as a data strip rather than a sentence
+  // the particulars, set as one compact strip so the hero stays short
   .hero-facts {
     display: flex;
     flex-wrap: wrap;
-    gap: 0 2.75rem;
+    gap: 0.35rem 2rem;
     border-top: 1px solid rgba(240, 233, 224, 0.16);
-    padding-top: 1.15rem;
+    padding-top: 0.9rem;
+    margin: 0;
 
     div {
-      padding: 0.2rem 0;
+      display: flex;
+      align-items: baseline;
+      gap: 0.5rem;
     }
 
     dt {
       font-family: ui-monospace, "SF Mono", Menlo, monospace;
-      font-size: 0.68rem;
+      font-size: 0.66rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(240, 233, 224, 0.45);
-      margin-bottom: 0.15rem;
+      color: rgba(240, 233, 224, 0.42);
     }
 
     dd {
       margin: 0;
       color: #F2EDE6;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
   }
 }

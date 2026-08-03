@@ -17,10 +17,9 @@ include-after-body:
   <canvas id="convergence" aria-hidden="true"></canvas>
   <div class="hero-content">
     <span class="hero-eyebrow">Stanford University &middot; Fall 2026</span>
-    <h1 class="hero-title">AI + Data<br>for <em>Science</em></h1>
+    <h1 class="hero-title">AI + Data for <em>Science</em></h1>
     <p class="hero-tagline">
-      A seminar series on scientific advances made possible by AI and novel
-      data &mdash; much of it running on Marlowe, Stanford&rsquo;s GPU cluster.
+      A seminar series on scientific advances driven by AI and Data.
     </p>
     <div class="hero-actions">
       <a class="btn-ember" href="schedule.html">View the schedule</a>
