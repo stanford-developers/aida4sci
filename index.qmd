@@ -28,7 +28,7 @@ include-after-body:
     <dl class="hero-facts">
       <div><dt>When</dt><dd>Wednesdays, 4:30&ndash;5:30 pm</dd></div>
       <div><dt>Where</dt><dd>CoDA E160</dd></div>
-      <div><dt>Course</dt><dd>STATS 282 &middot; EE 292R &middot; PSYCH 292R</dd></div>
+      <div><dt>Course</dt><dd>EE 292R &middot; PSYCH 292R &middot; STATS 282</dd></div>
     </dl>
   </div>
 </section>
@@ -51,9 +51,10 @@ community of researchers.
 
 The seminar is open to the Stanford community, and meets Wednesdays at
 4:30 pm in [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA).
-Students may enroll under any of the cross-listed course numbers —
-[STATS 282](https://explorecourses.stanford.edu/search?view=catalog&q=STATS+282),
-EE 292R, or PSYCH 292R — via [Axess](https://axess.stanford.edu).
+Students may enroll under any of the cross-listed course numbers — EE 292R,
+PSYCH 292R, or
+[STATS 282](https://explorecourses.stanford.edu/search?view=catalog&q=STATS+282)
+— via [Axess](https://axess.stanford.edu).
 
 ::: {.section-head}
 Organizers

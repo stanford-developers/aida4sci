@@ -1,7 +1,7 @@
 # AI + Data for Science (AIDa4Sci)
 
 Quarto website for the Stanford seminar series **AI + Data for
-Science** (STATS 282 / EE 292R / PSYCH 292R), Wednesdays 4:30–5:30 pm
+Science** (EE 292R / PSYCH 292R / STATS 282), Wednesdays 4:30–5:30 pm
 in CoDA E160.
 
 ## Local preview and build
