@@ -1,0 +1,51 @@
+name: Publish site
+
+on:
+  push:
+    branches: [main]
+  # The home page's "Up next" card is resolved against the build date, so the
+  # site has to rebuild on its own or it will keep advertising a seminar that
+  # has already happened. Thursdays 08:00 UTC is just after a Wednesday
+  # 4:30-5:30 pm Pacific seminar ends, so the card rolls over the next morning.
+  schedule:
+    - cron: "0 8 * * 4"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race; queue instead of cancelling so a push during a
+# scheduled run still publishes.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render site
+        run: quarto render
+
+      - name: Check the render produced a site
+        run: test -f _site/index.html && test -f _site/schedule.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -11,6 +11,32 @@ quarto preview   # live-reloading local server
 quarto render    # builds the site into _site/
 ```
 
+## Publishing
+
+Pushing to `main` builds and deploys the site via GitHub Actions
+(`.github/workflows/publish.yml`). Nothing is committed to a `gh-pages`
+branch — the built site is uploaded straight to Pages.
+
+**One-time setup:** in the repository's *Settings → Pages*, set **Source**
+to **GitHub Actions**. Until that is done the deploy step fails.
+
+The workflow also runs on a schedule, Thursdays at 08:00 UTC. That is
+deliberate: the home page's "Up next" card is resolved against the build
+date, so without a periodic rebuild the site would keep advertising a
+seminar that already happened. The weekly run rolls the card over the
+morning after each Wednesday seminar. You can also trigger a rebuild by
+hand from the Actions tab.
+
+### Pointing a stanford.edu domain at it
+
+1. Ask for a CNAME record for the desired host (e.g. `stats282.stanford.edu`)
+   pointing at `bnaras.github.io`.
+2. Add a file named `CNAME` at the repository root containing just that
+   hostname, and list it under `project.resources` in `_quarto.yml` so it is
+   copied into `_site/`.
+3. Set `website.site-url` in `_quarto.yml` to the new address — it feeds the
+   sitemap and the link previews shown by search engines and chat apps.
+
 ## "Up next" on the home page
 
 The home page shows the next seminar automatically — there is nothing to
