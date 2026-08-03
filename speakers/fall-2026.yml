@@ -10,7 +10,18 @@
 
 - date: 2026-09-23
   display_date: "September 23"
-  tba: true
+  name: "Example Speaker"
+  url: "https://example.stanford.edu"
+  affiliation: "Stanford University"
+  title: "A representative talk title, shown so the card layout can be checked"
+  abstract: >
+    Placeholder entry demonstrating how a confirmed speaker renders: photo,
+    linked name, affiliation, talk title, this abstract, and an optional bio
+    below. Delete this block when the first real speaker is confirmed — see
+    speakers/_template.yml.
+  bio: >
+    A one-paragraph biography appears here when supplied, set smaller and
+    quieter than the abstract.
 
 - date: 2026-09-30
   display_date: "September 30"

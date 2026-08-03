@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="AIDa4Sci emblem (light)">
+<title>AI + Data for Science emblem</title>
+<desc>Streams of data points converge and ignite a gold burst of discovery.</desc>
+<g transform="translate(-6,-15) scale(1.15)">
+<g fill="none" stroke="#D9695F" stroke-width="2.5" opacity="0.5" stroke-linecap="round">
+<path d="M30 58 Q85 70 124 94"/>
+<path d="M24 100 Q80 100 122 100"/>
+<path d="M34 146 Q85 132 124 106"/>
+</g>
+<g fill="#D9695F">
+<circle cx="28" cy="52" r="3.5" opacity="0.6"/>
+<circle cx="42" cy="66" r="2.5" opacity="0.4"/>
+<circle cx="56" cy="63" r="3" opacity="0.5"/>
+<circle cx="22" cy="94" r="3" opacity="0.55"/>
+<circle cx="38" cy="104" r="2.5" opacity="0.35"/>
+<circle cx="54" cy="97" r="3.5" opacity="0.5"/>
+<circle cx="30" cy="140" r="3" opacity="0.5"/>
+<circle cx="46" cy="150" r="2.5" opacity="0.35"/>
+<circle cx="60" cy="136" r="3.5" opacity="0.55"/>
+<circle cx="72" cy="80" r="2.5" opacity="0.4"/>
+<circle cx="74" cy="118" r="2.5" opacity="0.4"/>
+<circle cx="88" cy="92" r="3" opacity="0.45"/>
+<circle cx="90" cy="110" r="2.5" opacity="0.4"/>
+<circle cx="104" cy="99" r="3" opacity="0.5"/>
+</g>
+<g stroke="#E9A03E" stroke-width="4" stroke-linecap="round">
+<line x1="145.0" y1="100.0" x2="162.0" y2="100.0"/>
+<line x1="141.2" y1="109.2" x2="146.8" y2="114.8"/>
+<line x1="132.0" y1="113.0" x2="132.0" y2="130.0"/>
+<line x1="122.8" y1="109.2" x2="117.2" y2="114.8"/>
+<line x1="119.0" y1="100.0" x2="102.0" y2="100.0"/>
+<line x1="122.8" y1="90.8" x2="117.2" y2="85.2"/>
+<line x1="132.0" y1="87.0" x2="132.0" y2="70.0"/>
+<line x1="141.2" y1="90.8" x2="146.8" y2="85.2"/>
+</g>
+<circle cx="132" cy="100" r="7" fill="#D9695F"/>
+</g>
+</svg>

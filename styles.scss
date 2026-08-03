@@ -1,126 +1,273 @@
 /*-- scss:defaults --*/
 
-// Stanford identity palette
-$cardinal: #8C1515;
-$cardinal-dark: #820000;
-$stanford-black: #2E2D29;
-$cool-grey: #53565A;
-$stone: #7F7776;
-$fog: #F7F6F5;
+// ---------------------------------------------------------------- palette
+//
+// Two grounds. Night carries the mastheads — the hero and every page's plate
+// strip — and paper carries everything you actually read. Cardinal has two
+// values because #8C1515 goes muddy on ink; the brighter one is for night only.
 
-$primary: $cardinal;
+$cardinal:        #8C1515;   // Stanford cardinal, on paper
+$cardinal-bright: #C4443C;   // cardinal, on ink
+$ember:           #E9A03E;   // the single warm accent — used sparingly
+$ink:             #171310;   // night ground
+$ink-raised:      #241C17;
+$stanford-black:  #2E2D29;
+$cool-grey:       #53565A;
+$stone:           #7F7776;
+$fog:             #F7F6F5;
+$paper:           #FBFAF8;
+$rule:            #E5E2DD;
+
+$primary:    $cardinal;
 $link-color: $cardinal;
 $body-color: $stanford-black;
+$body-bg:    $paper;
 
-$navbar-bg: #ffffff;
-$navbar-fg: $stanford-black;
-$navbar-hl: $cardinal;
+// ------------------------------------------------------------- typography
+//
+// Newsreader (editorial serif, real personality at large sizes) over
+// Source Sans 3 (Stanford-adjacent humanist sans). Both bundled locally in
+// fonts/ — no CDN at runtime.
 
-$footer-bg: $stanford-black;
-$footer-fg: #d9d7d2;
+$font-family-sans-serif: "Source Sans 3", -apple-system, BlinkMacSystemFont,
+                         "Segoe UI", Roboto, sans-serif;
+$headings-font-family:   "Newsreader", Iowan Old Style, Georgia, serif;
+$headings-font-weight:   600;
+$font-size-base:         1.0625rem;
+$line-height-base:       1.65;
+
+$navbar-bg: $ink;
+$navbar-fg: rgba(232, 226, 217, 0.82);
+$navbar-hl: $ember;
+
+$footer-bg: $ink;
+$footer-fg: rgba(232, 226, 217, 0.68);
 
 /*-- scss:rules --*/
 
-// full-bleed hero uses 100vw margins; keep it from creating a horizontal scrollbar
+// full-bleed sections use 100vw margins; never let that scroll the body
 body {
   overflow-x: clip;
 }
 
-// Cardinal accent bar above the navbar, echoing stanford.edu
+// Pages that open with a masthead have no Quarto title, which still emits an
+// empty header block; and Quarto pads the content column
+// (#quarto-content > * { padding-top: 14px }). Both show as a pale strip above
+// the artwork. Every page here opens with a masthead, so clear them.
+main.content > header#title-block-header:empty {
+  display: none;
+}
+
+// needs the ID to out-specify Quarto's own `#quarto-content > *` rule
+#quarto-content > main.content {
+  padding-top: 0;
+}
+
+// Full-bleed background, content still aligned to the text column. The
+// percentages resolve against the *parent* (the content column), so the
+// padding puts the inner edge exactly back where body copy starts.
+@mixin bleed-aligned {
+  margin-inline: calc(50% - 50vw);
+  padding-inline: calc(50vw - 50%);
+}
+
+h1, h2, h3 {
+  letter-spacing: -0.012em;
+  text-wrap: balance;
+}
+
+// ------------------------------------------------------------------ navbar
+
 .navbar {
-  border-top: 4px solid $cardinal;
-  border-bottom: 1px solid #e5e2dd;
+  border-bottom: 3px solid $cardinal-bright;
 
   .navbar-title {
-    font-weight: 650;
-    color: $cardinal;
-    letter-spacing: 0.01em;
+    font-family: $headings-font-family;
+    font-size: 1.16rem;
+    font-weight: 600;
+    color: #F2EDE6;
+    letter-spacing: 0.005em;
   }
 
   .navbar-logo {
-    max-height: 34px;
+    max-height: 32px;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    letter-spacing: 0.01em;
   }
 }
 
-.navbar .nav-link {
-  font-weight: 500;
-}
+// ------------------------------------------------- the hero (home page only)
 
-// ---------- Hero (landing page) ----------
+.hero-night {
+  @include bleed-aligned;
+  position: relative;
+  min-height: min(74vh, 620px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: radial-gradient(120% 130% at 72% 50%, $ink-raised 0%, $ink 62%);
+  border-bottom: 1px solid #2B231C;
 
-.hero {
-  background:
-    url("images/hero-bg.svg") center / cover no-repeat,
-    linear-gradient(160deg, #fdfcfb 0%, #f3efe9 100%);
-  border-bottom: 1px solid #e5e2dd;
-  margin: 0 calc(50% - 50vw) 2rem;   // full-bleed
-  padding: 3.5rem 1.5rem 3rem;
-  text-align: center;
+  canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
 
-  .hero-lockup {
-    max-width: min(560px, 92vw);
-    height: auto;
-    margin-bottom: 1.25rem;
+  .hero-content {
+    position: relative;   // above the canvas
+    width: 100%;
+    padding: 4.5rem 0 4rem;
+  }
+
+  .hero-eyebrow {
+    display: block;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.76rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: $ember;
+    margin-bottom: 1.1rem;
+  }
+
+  .hero-title {
+    font-family: $headings-font-family;
+    font-weight: 600;
+    font-size: clamp(2.9rem, 7.4vw, 5.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+    color: #FAF6F0;
+    margin: 0 0 1.1rem;
+    max-width: 15ch;
+
+    em {
+      font-style: italic;
+      color: $ember;
+    }
   }
 
   .hero-tagline {
-    font-size: 1.25rem;
-    color: $cool-grey;
-    max-width: 44rem;
-    margin: 0 auto 1.5rem;
+    font-size: clamp(1.05rem, 1.7vw, 1.3rem);
+    line-height: 1.5;
+    color: rgba(240, 233, 224, 0.72);
+    max-width: 36rem;
+    margin: 0 0 2rem;
   }
 
-  .hero-buttons .btn {
-    margin: 0.25rem 0.4rem;
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2.75rem;
+  }
+
+  .btn-ember {
+    background: $ember;
+    color: #221A10;
+    border: none;
+    font-weight: 600;
+    padding: 0.62rem 1.4rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    transition: transform 0.15s ease, background 0.15s ease;
+
+    &:hover { background: #F5B45C; transform: translateY(-1px); color: #221A10; }
+  }
+
+  .btn-ghost {
+    color: rgba(240, 233, 224, 0.9);
+    border: 1px solid rgba(240, 233, 224, 0.3);
+    font-weight: 500;
+    padding: 0.62rem 1.4rem;
+    border-radius: 0.3rem;
+    text-decoration: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+
+    &:hover { border-color: $ember; background: rgba(233, 160, 62, 0.08); color: #fff; }
+  }
+
+  // the particulars, set as a data strip rather than a sentence
+  .hero-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 2.75rem;
+    border-top: 1px solid rgba(240, 233, 224, 0.16);
+    padding-top: 1.15rem;
+
+    div {
+      padding: 0.2rem 0;
+    }
+
+    dt {
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(240, 233, 224, 0.45);
+      margin-bottom: 0.15rem;
+    }
+
+    dd {
+      margin: 0;
+      color: #F2EDE6;
+      font-weight: 600;
+      font-size: 1rem;
+    }
   }
 }
 
-// ---------- Atlas plates: full-bleed page banners ----------
-//
-// Each plate is drawn on the same paper as the page, so a banner reads as the
-// page continuing rather than a box pasted on. The plate's left 44% is quiet
-// by construction — that is where the title sits, in ink, with no scrim.
+// --------------------------------------------- atlas plates as page mastheads
 
 .page-banner {
-  margin: -1rem calc(50% - 50vw) 2.25rem;
-  min-height: clamp(190px, 21vw, 260px);
+  @include bleed-aligned;
+  position: relative;
+  margin-bottom: 2.75rem;
+  min-height: clamp(180px, 22vw, 280px);
   display: flex;
   align-items: center;
+  background-color: $ink;
   background-size: cover;
   background-position: center right;
-  border-bottom: 1px solid #e5e2dd;
-  padding: 1.75rem 1.5rem;
+  border-bottom: 3px solid $cardinal-bright;
+  padding-block: 2rem;
 
-  // Paper scrim over the left. The plates reserve a quiet zone by
-  // construction, but a narrow viewport crops horizontally into the artwork,
-  // so the scrim is a custom property the media query below can strengthen.
+  // ink scrim over the left: the plates keep that zone quiet by construction,
+  // but a narrow viewport crops into the artwork, so this guarantees the title
+  // always reads. Overridden below for small screens.
   --plate-scrim: linear-gradient(
     100deg,
-    rgba(251, 250, 248, 0.97) 0%,
-    rgba(251, 250, 248, 0.90) 30%,
-    rgba(251, 250, 248, 0.00) 60%
+    rgba(23, 19, 16, 0.94) 0%,
+    rgba(23, 19, 16, 0.72) 34%,
+    rgba(23, 19, 16, 0.00) 64%
   );
   background-image: var(--plate-scrim), var(--plate-image);
 
   .banner-inner {
-    width: min(100%, 56rem);
-    margin: 0 auto;
+    width: 100%;
   }
 
   .banner-title {
     display: block;
-    color: $stanford-black;
-    font-size: clamp(1.7rem, 3.4vw, 2.35rem);
-    font-weight: 700;
-    line-height: 1.15;
+    font-family: $headings-font-family;
+    font-weight: 600;
+    font-size: clamp(2rem, 4.2vw, 3.1rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #FAF6F0;
     margin: 0;
   }
 
   .banner-sub {
     display: block;
-    color: $cool-grey;
-    margin-top: 0.35rem;
-    max-width: 30rem;
+    color: rgba(240, 233, 224, 0.66);
+    margin-top: 0.55rem;
+    max-width: 34rem;
   }
 }
 
@@ -130,151 +277,173 @@ body {
 .banner-field     { --plate-image: url("images/banners/plate-field.svg"); }
 .banner-attention { --plate-image: url("images/banners/plate-attention.svg"); }
 
-// Narrow viewports crop into the plate, so lift the paper further across it:
-// the drawing stays present at the right edge, the title always reads.
 @media (max-width: 767px) {
   .page-banner {
     --plate-scrim: linear-gradient(
       100deg,
-      rgba(251, 250, 248, 0.98) 0%,
-      rgba(251, 250, 248, 0.94) 52%,
-      rgba(251, 250, 248, 0.62) 100%
+      rgba(23, 19, 16, 0.95) 0%,
+      rgba(23, 19, 16, 0.88) 54%,
+      rgba(23, 19, 16, 0.55) 100%
     );
-    min-height: 168px;
+    min-height: 156px;
   }
 }
 
-// ---------- Info cards (When / Where / Format) ----------
+// ------------------------------------------------------------ section heads
+
+.section-head {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: $cardinal;
+  border-bottom: 1px solid $rule;
+  padding-bottom: 0.5rem;
+  margin: 3rem 0 1.5rem;
+}
+
+// ------------------------------------------------- info cards and organizers
 
 .info-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
-  margin: 1.5rem 0 2rem;
+  margin: 0 0 2rem;
 
   .info-card {
     background: $fog;
-    border: 1px solid #e5e2dd;
-    border-radius: 0.75rem;
+    border: 1px solid $rule;
+    border-left: 3px solid $cardinal;
+    border-radius: 0 0.5rem 0.5rem 0;
     padding: 1.1rem 1.25rem;
 
     h3 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-family: ui-monospace, "SF Mono", Menlo, monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: $cardinal;
-      margin: 0 0 0.4rem;
-      border: none;
+      margin: 0 0 0.45rem;
     }
 
-    p {
-      margin: 0;
-      font-size: 1.02rem;
-    }
+    p { margin: 0; }
   }
 }
 
-// ---------- Organizers ----------
-
 .organizers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 0.75rem;
-  margin: 1rem 0 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 0.9rem;
+  margin: 1rem 0 2.5rem;
 
   .organizer {
-    border-left: 3px solid $cardinal;
-    background: $fog;
-    border-radius: 0 0.5rem 0.5rem 0;
-    padding: 0.7rem 1rem;
+    padding: 0.2rem 0;
 
     a {
+      font-family: $headings-font-family;
+      font-size: 1.12rem;
       font-weight: 600;
       text-decoration: none;
+      border-bottom: 1px solid rgba(140, 21, 21, 0.28);
+
+      &:hover { border-bottom-color: $cardinal; }
     }
 
     .dept {
       display: block;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       color: $stone;
+      margin-top: 0.15rem;
     }
   }
 }
 
-// ---------- Schedule listing ----------
+// ------------------------------------------------------------- talk listing
 
 .talk-card {
   display: grid;
-  grid-template-columns: 150px 1fr;
-  gap: 1.25rem;
+  grid-template-columns: 158px 1fr;
+  gap: 1.5rem;
   align-items: start;
-  border: 1px solid #e5e2dd;
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-  margin-bottom: 1.25rem;
-  background: #fff;
+  border-top: 1px solid $rule;
+  padding: 1.75rem 0;
 
   .talk-photo img {
-    width: 150px;
-    height: 150px;
+    width: 158px;
+    height: 158px;
     object-fit: cover;
-    border-radius: 0.6rem;
-    border: 1px solid #e5e2dd;
+    border-radius: 0.5rem;
+    border: 1px solid $rule;
   }
 
   .talk-date {
     display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 0.1em;
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: #fff;
-    background: $cardinal;
-    border-radius: 0.35rem;
-    padding: 0.15rem 0.6rem;
+    color: $cardinal;
     margin-bottom: 0.5rem;
   }
 
   .talk-speaker {
-    font-size: 1.25rem;
-    font-weight: 650;
-    margin: 0 0 0.1rem;
+    font-family: $headings-font-family;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.15;
+    margin: 0 0 0.15rem;
+    border-bottom: none;   // Quarto rules its h2s; not wanted on a name
 
-    a { text-decoration: none; }
+    a {
+      text-decoration: none;
+      border-bottom: 1px solid rgba(140, 21, 21, 0.25);
+      &:hover { border-bottom-color: $cardinal; }
+    }
   }
 
   .talk-affiliation {
     color: $stone;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.65rem;
   }
 
   .talk-title {
-    font-size: 1.08rem;
-    font-style: italic;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $stanford-black;
+    margin-bottom: 0.6rem;
   }
 
   .talk-abstract {
-    border-left: 3px solid #e5e2dd;
-    padding-left: 0.9rem;
+    border-left: 2px solid $rule;
+    padding-left: 1rem;
     color: $cool-grey;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.6rem;
   }
 
   .talk-bio {
-    font-size: 0.92rem;
+    font-size: 0.93rem;
     color: $stone;
-
     strong { color: $cool-grey; }
   }
 }
 
-// Slim row for dates with no confirmed speaker yet
+// a date with no confirmed speaker: a held slot, not an empty card
 .talk-card.talk-tba {
   grid-template-columns: 1fr;
-  background: $fog;
-  padding: 0.8rem 1.25rem;
+  padding: 1rem 0;
+  align-items: center;
+
+  .talk-held {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .talk-date { margin-bottom: 0; }
 
   .talk-tba-label {
     color: $stone;
@@ -285,14 +454,11 @@ body {
 @media (max-width: 575px) {
   .talk-card {
     grid-template-columns: 1fr;
+    gap: 1rem;
 
-    .talk-photo img {
-      width: 120px;
-      height: 120px;
-    }
+    .talk-photo img { width: 128px; height: 128px; }
   }
 
-  .hero {
-    padding: 2.25rem 1rem 2rem;
-  }
+  .hero-night .hero-content { padding: 3rem 0 2.5rem; }
+  .hero-night .hero-facts { gap: 0 1.5rem; }
 }

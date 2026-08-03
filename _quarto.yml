@@ -3,6 +3,8 @@ project:
   output-dir: _site
   resources:
     - images/
+    - fonts/
+    - js/
 
 website:
   title: "AI + Data for Science"
@@ -10,7 +12,7 @@ website:
   site-url: https://stats282.stanford.edu/
   favicon: images/logo-mark.svg
   navbar:
-    logo: images/logo-mark.svg
+    logo: images/logo-mark-light.svg
     logo-alt: "AIDa4Sci emblem"
     title: "AI + Data for Science"
     pinned: true
@@ -35,8 +37,9 @@ website:
 format:
   html:
     theme: [cosmo, styles.scss]
+    css: fonts.css
     toc: false
     link-external-newwindow: true
     include-in-header:
       text: |
-        <meta name="theme-color" content="#8C1515">
+        <meta name="theme-color" content="#171310">

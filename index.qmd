@@ -1,56 +1,55 @@
 ---
 pagetitle: "AI + Data for Science · Stanford University"
 toc: false
+include-after-body:
+  text: |
+    <script src="js/convergence.js" defer></script>
 ---
 
-::: {.hero}
-![](images/logo-lockup.svg){.hero-lockup fig-alt="AIDa4Sci: AI + Data for Science"}
+```{=html}
+<section class="hero-night">
+  <canvas id="convergence" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Stanford University &middot; Fall 2026</span>
+    <h1 class="hero-title">AI + Data<br>for <em>Science</em></h1>
+    <p class="hero-tagline">
+      A seminar series on scientific advances made possible by AI and novel
+      data &mdash; much of it running on Marlowe, Stanford&rsquo;s GPU cluster.
+    </p>
+    <div class="hero-actions">
+      <a class="btn-ember" href="schedule.html">View the schedule</a>
+      <a class="btn-ghost" href="past.html">Past quarters</a>
+    </div>
+    <dl class="hero-facts">
+      <div><dt>When</dt><dd>Wednesdays, 4:30&ndash;5:30 pm</dd></div>
+      <div><dt>Where</dt><dd>CoDA E160</dd></div>
+      <div><dt>Course</dt><dd>STATS 282 &middot; EE 292R &middot; PSYCH 292R</dd></div>
+    </dl>
+  </div>
+</section>
+```
 
-::: {.hero-tagline}
-A Stanford seminar series highlighting remarkable scientific advances
-and research enabled by AI and novel data.
+::: {.section-head}
+About the seminar
 :::
 
-::: {.hero-buttons}
-[View the Schedule](schedule.qmd){.btn .btn-primary}
-[Past Quarters](past.qmd){.btn .btn-outline-secondary}
-:::
-:::
-
-::: {.info-cards}
-::: {.info-card}
-### When
-Wednesdays, 4:30–5:30 pm<br>Fall quarter 2026
-:::
-
-::: {.info-card}
-### Where
-[CoDA E160](https://campus-map.stanford.edu/?srch=CoDA), Stanford University
-:::
-
-::: {.info-card}
-### Course numbers
-STATS 282 · EE 292R · PSYCH 292R<br>
-Enroll via [Axess](https://axess.stanford.edu)
-:::
-:::
-
-## About the seminar
-
-Our aim is to bring together speakers from our community and industry
-to highlight remarkable scientific advances and research enabled by AI
-and novel data. We are particularly interested in the exciting work
-being done on Stanford's new GPU cluster,
+Our aim is to bring together speakers from our community and industry to
+highlight remarkable scientific advances and research enabled by AI and
+novel data. We are particularly interested in the exciting work being done
+on Stanford's GPU cluster,
 [Marlowe](https://datascience.stanford.edu/marlowe). Our goal is to
-communicate this research and share ideas that may be useful to a
-broad community of researchers.
+communicate this research and share ideas that may be useful to a broad
+community of researchers.
 
-The seminar is open to the Stanford community. Students may enroll
-under any of the cross-listed course numbers
-([STATS 282](https://explorecourses.stanford.edu/search?view=catalog&q=STATS+282),
-EE 292R, PSYCH 292R).
+The seminar is open to the Stanford community, and meets Wednesdays at
+4:30 pm in [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA).
+Students may enroll under any of the cross-listed course numbers —
+[STATS 282](https://explorecourses.stanford.edu/search?view=catalog&q=STATS+282),
+EE 292R, or PSYCH 292R — via [Axess](https://axess.stanford.edu).
 
-## Organizers
+::: {.section-head}
+Organizers
+:::
 
 ::: {.organizers}
 ::: {.organizer}
