@@ -1,0 +1,24 @@
+---
+pagetitle: "Past Quarters · AI + Data for Science"
+toc: false
+---
+
+::: {.page-banner .banner-proof}
+::: {.banner-inner}
+[Past Quarters]{.banner-title}
+[Archived schedules, speakers, and abstracts]{.banner-sub}
+:::
+:::
+
+Fall 2026 is the inaugural quarter of the seminar — there are no past
+schedules yet.
+
+When a quarter ends, its schedule is archived here so that speakers,
+titles, and abstracts remain browsable:
+
+<!--
+As quarters complete, add entries like:
+
+- [Fall 2026](past/2026-fall.qmd)
+- [Winter 2027](past/2027-winter.qmd)
+-->

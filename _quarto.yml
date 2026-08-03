@@ -1,0 +1,42 @@
+project:
+  type: website
+  output-dir: _site
+  resources:
+    - images/
+
+website:
+  title: "AI + Data for Science"
+  description: "AI + Data for Science seminar series at Stanford University (STATS 282 / EE 292R / PSYCH 292R)"
+  site-url: https://stats282.stanford.edu/
+  favicon: images/logo-mark.svg
+  navbar:
+    logo: images/logo-mark.svg
+    logo-alt: "AIDa4Sci emblem"
+    title: "AI + Data for Science"
+    pinned: true
+    left:
+      - href: index.qmd
+        text: Home
+      - href: schedule.qmd
+        text: Schedule
+      - href: past.qmd
+        text: Past Quarters
+  page-footer:
+    left: |
+      Organized by
+      [Emmanuel Candès](https://candes.su.domains),
+      [Balasubramanian Narasimhan](https://naras.su.domains),
+      [Brian Wandell](https://wandell.vista.su.domains/blog/), and
+      [Gordon Wetzstein](https://stanford.edu/~gordonwz/)
+    right: |
+      STATS 282 · EE 292R · PSYCH 292R<br>
+      Stanford University
+
+format:
+  html:
+    theme: [cosmo, styles.scss]
+    toc: false
+    link-external-newwindow: true
+    include-in-header:
+      text: |
+        <meta name="theme-color" content="#8C1515">

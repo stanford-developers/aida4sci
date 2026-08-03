@@ -1,0 +1,298 @@
+/*-- scss:defaults --*/
+
+// Stanford identity palette
+$cardinal: #8C1515;
+$cardinal-dark: #820000;
+$stanford-black: #2E2D29;
+$cool-grey: #53565A;
+$stone: #7F7776;
+$fog: #F7F6F5;
+
+$primary: $cardinal;
+$link-color: $cardinal;
+$body-color: $stanford-black;
+
+$navbar-bg: #ffffff;
+$navbar-fg: $stanford-black;
+$navbar-hl: $cardinal;
+
+$footer-bg: $stanford-black;
+$footer-fg: #d9d7d2;
+
+/*-- scss:rules --*/
+
+// full-bleed hero uses 100vw margins; keep it from creating a horizontal scrollbar
+body {
+  overflow-x: clip;
+}
+
+// Cardinal accent bar above the navbar, echoing stanford.edu
+.navbar {
+  border-top: 4px solid $cardinal;
+  border-bottom: 1px solid #e5e2dd;
+
+  .navbar-title {
+    font-weight: 650;
+    color: $cardinal;
+    letter-spacing: 0.01em;
+  }
+
+  .navbar-logo {
+    max-height: 34px;
+  }
+}
+
+.navbar .nav-link {
+  font-weight: 500;
+}
+
+// ---------- Hero (landing page) ----------
+
+.hero {
+  background:
+    url("images/hero-bg.svg") center / cover no-repeat,
+    linear-gradient(160deg, #fdfcfb 0%, #f3efe9 100%);
+  border-bottom: 1px solid #e5e2dd;
+  margin: 0 calc(50% - 50vw) 2rem;   // full-bleed
+  padding: 3.5rem 1.5rem 3rem;
+  text-align: center;
+
+  .hero-lockup {
+    max-width: min(560px, 92vw);
+    height: auto;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.25rem;
+    color: $cool-grey;
+    max-width: 44rem;
+    margin: 0 auto 1.5rem;
+  }
+
+  .hero-buttons .btn {
+    margin: 0.25rem 0.4rem;
+  }
+}
+
+// ---------- Atlas plates: full-bleed page banners ----------
+//
+// Each plate is drawn on the same paper as the page, so a banner reads as the
+// page continuing rather than a box pasted on. The plate's left 44% is quiet
+// by construction — that is where the title sits, in ink, with no scrim.
+
+.page-banner {
+  margin: -1rem calc(50% - 50vw) 2.25rem;
+  min-height: clamp(190px, 21vw, 260px);
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center right;
+  border-bottom: 1px solid #e5e2dd;
+  padding: 1.75rem 1.5rem;
+
+  // Paper scrim over the left. The plates reserve a quiet zone by
+  // construction, but a narrow viewport crops horizontally into the artwork,
+  // so the scrim is a custom property the media query below can strengthen.
+  --plate-scrim: linear-gradient(
+    100deg,
+    rgba(251, 250, 248, 0.97) 0%,
+    rgba(251, 250, 248, 0.90) 30%,
+    rgba(251, 250, 248, 0.00) 60%
+  );
+  background-image: var(--plate-scrim), var(--plate-image);
+
+  .banner-inner {
+    width: min(100%, 56rem);
+    margin: 0 auto;
+  }
+
+  .banner-title {
+    display: block;
+    color: $stanford-black;
+    font-size: clamp(1.7rem, 3.4vw, 2.35rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0;
+  }
+
+  .banner-sub {
+    display: block;
+    color: $cool-grey;
+    margin-top: 0.35rem;
+    max-width: 30rem;
+  }
+}
+
+.banner-fold      { --plate-image: url("images/banners/plate-fold.svg"); }
+.banner-proof     { --plate-image: url("images/banners/plate-proof.svg"); }
+.banner-cell      { --plate-image: url("images/banners/plate-cell.svg"); }
+.banner-field     { --plate-image: url("images/banners/plate-field.svg"); }
+.banner-attention { --plate-image: url("images/banners/plate-attention.svg"); }
+
+// Narrow viewports crop into the plate, so lift the paper further across it:
+// the drawing stays present at the right edge, the title always reads.
+@media (max-width: 767px) {
+  .page-banner {
+    --plate-scrim: linear-gradient(
+      100deg,
+      rgba(251, 250, 248, 0.98) 0%,
+      rgba(251, 250, 248, 0.94) 52%,
+      rgba(251, 250, 248, 0.62) 100%
+    );
+    min-height: 168px;
+  }
+}
+
+// ---------- Info cards (When / Where / Format) ----------
+
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2rem;
+
+  .info-card {
+    background: $fog;
+    border: 1px solid #e5e2dd;
+    border-radius: 0.75rem;
+    padding: 1.1rem 1.25rem;
+
+    h3 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: $cardinal;
+      margin: 0 0 0.4rem;
+      border: none;
+    }
+
+    p {
+      margin: 0;
+      font-size: 1.02rem;
+    }
+  }
+}
+
+// ---------- Organizers ----------
+
+.organizers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 2rem;
+
+  .organizer {
+    border-left: 3px solid $cardinal;
+    background: $fog;
+    border-radius: 0 0.5rem 0.5rem 0;
+    padding: 0.7rem 1rem;
+
+    a {
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .dept {
+      display: block;
+      font-size: 0.88rem;
+      color: $stone;
+    }
+  }
+}
+
+// ---------- Schedule listing ----------
+
+.talk-card {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+  border: 1px solid #e5e2dd;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  background: #fff;
+
+  .talk-photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.6rem;
+    border: 1px solid #e5e2dd;
+  }
+
+  .talk-date {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #fff;
+    background: $cardinal;
+    border-radius: 0.35rem;
+    padding: 0.15rem 0.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .talk-speaker {
+    font-size: 1.25rem;
+    font-weight: 650;
+    margin: 0 0 0.1rem;
+
+    a { text-decoration: none; }
+  }
+
+  .talk-affiliation {
+    color: $stone;
+    margin-bottom: 0.5rem;
+  }
+
+  .talk-title {
+    font-size: 1.08rem;
+    font-style: italic;
+    margin-bottom: 0.5rem;
+  }
+
+  .talk-abstract {
+    border-left: 3px solid #e5e2dd;
+    padding-left: 0.9rem;
+    color: $cool-grey;
+    margin-bottom: 0.5rem;
+  }
+
+  .talk-bio {
+    font-size: 0.92rem;
+    color: $stone;
+
+    strong { color: $cool-grey; }
+  }
+}
+
+// Slim row for dates with no confirmed speaker yet
+.talk-card.talk-tba {
+  grid-template-columns: 1fr;
+  background: $fog;
+  padding: 0.8rem 1.25rem;
+
+  .talk-tba-label {
+    color: $stone;
+    font-style: italic;
+  }
+}
+
+@media (max-width: 575px) {
+  .talk-card {
+    grid-template-columns: 1fr;
+
+    .talk-photo img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .hero {
+    padding: 2.25rem 1rem 2rem;
+  }
+}

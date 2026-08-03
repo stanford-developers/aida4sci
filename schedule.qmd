@@ -1,0 +1,24 @@
+---
+pagetitle: "Schedule · Fall 2026 · AI + Data for Science"
+listing:
+  id: talks
+  template: ejs/speaker.ejs
+  contents:
+    - speakers/fall-2026.yml
+  sort: "date asc"
+toc: false
+---
+
+::: {.page-banner .banner-fold}
+::: {.banner-inner}
+[Schedule · Fall 2026]{.banner-title}
+[Speakers and topics · Wednesdays 4:30–5:30 pm · CoDA E160]{.banner-sub}
+:::
+:::
+
+The seminar meets **Wednesdays, 4:30–5:30 pm** in
+[CoDA E160](https://campus-map.stanford.edu/?srch=CoDA). Any changes
+to the schedule will be reflected here, so check this page often.
+
+::: {#talks}
+:::

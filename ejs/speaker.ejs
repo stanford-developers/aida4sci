@@ -1,0 +1,26 @@
+<% for (const item of items) { %>
+<% if (item.tba) { %>
+<div class="talk-card talk-tba">
+<div>
+<span class="talk-date"><%= item.display_date %></span>
+<span class="talk-tba-label">Speaker to be announced</span>
+</div>
+</div>
+<% } else { %>
+<div class="talk-card">
+<div class="talk-photo">
+<img src="<%= item.photo ?? 'images/speakers/placeholder.svg' %>" alt="Photo of <%= item.name %>">
+</div>
+<div class="talk-body">
+<span class="talk-date"><%= item.display_date %></span>
+<h2 class="talk-speaker">
+<% if (item.url) { %><a href="<%= item.url %>"><%= item.name %></a><% } else { %><%= item.name %><% } %>
+</h2>
+<% if (item.affiliation) { %><div class="talk-affiliation"><%= item.affiliation %></div><% } %>
+<% if (item.title) { %><div class="talk-title"><%= item.title %></div><% } %>
+<% if (item.abstract) { %><div class="talk-abstract"><%= item.abstract %></div><% } %>
+<% if (item.bio) { %><div class="talk-bio"><strong>Bio:</strong> <%= item.bio %></div><% } %>
+</div>
+</div>
+<% } %>
+<% } %>
