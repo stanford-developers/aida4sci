@@ -41,20 +41,21 @@ include-after-body:
 About the seminar
 :::
 
-Our aim is to bring together speakers from our community and industry to
-highlight remarkable scientific advances and research enabled by AI and
-novel data. We are particularly interested in the exciting work being done
-on Stanford's GPU cluster,
-[Marlowe](https://datascience.stanford.edu/marlowe). Our goal is to
-communicate this research and share ideas that may be useful to a broad
-community of researchers.
+This seminar series brings people together to hear about and discuss groundbreaking research at the intersection of advanced AI models and valuable datasets across diverse scientific domains. We hope the seminar serves as an informal watering hole where researchers across academia and industry meet, exchange findings, and spark new collaborations.
 
-The seminar is open to the Stanford community, and meets Wednesdays at
-4:30 pm in [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA).
-Students may enroll under any of the cross-listed course numbers — EE 292R,
-PSYCH 292R, or
-[STATS 282](https://explorecourses.stanford.edu/search?view=catalog&q=STATS+282)
-— via [Axess](https://axess.stanford.edu).
+We welcome a wide range of topics and encourage community suggestions. Our initial speakers cover topics ranging from decoding complex biological systems to modeling human behavior and macroeconomic trends. Many of our speakers—though not all—leverage Stanford’s high-performance computing infrastructure, including the [Marlowe](https://datascience.stanford.edu/marlowe) GPU cluster.
+
+Whether you build frontier models or apply them to domain-specific challenges, join us to explore where AI-driven research is heading next.
+
+::: {.section-head}
+Logistics
+:::
+
+- **When:** Wednesdays, 4:30 PM
+- **Where:** [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA)
+- **Audience: ** Open to the entire Stanford community.
+- **Course Enrollment:** Students may register via Axess under EE 292R, PSYCH 292R, or STATS 282 on a credit/no-credit basis. (_The requirement is a short write-up on one of the seminar topics, chosen by the student. Details will follow._)
+
 
 ::: {.section-head}
 Organizers
