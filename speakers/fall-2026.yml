@@ -30,19 +30,27 @@
 
 - date: 2026-10-28
   display_date: "October 28"
-  tba: [Dan Yamins](https://stanford.edu/~yamins/)
+  name: "Dan Yamins"
+  url: "https://stanford.edu/~yamins/"
+  affiliation: "Stanford University"
 
 - date: 2026-11-04
   display_date: "November 4"
-  tba: [Ruijiang Li](https://profiles.stanford.edu/ruijiang-li)
+  name: "Ruijiang Li"
+  url: "https://profiles.stanford.edu/ruijiang-li"
+  affiliation: "Stanford University"
 
 - date: 2026-11-11
   display_date: "November 11"
-  tba: [Mohsen Bayati](https://web.stanford.edu/~bayati/)
+  name: "Mohsen Bayati"
+  url: "https://web.stanford.edu/~bayati/"
+  affiliation: "Stanford University"
 
 - date: 2026-11-18
   display_date: "November 18"
-  tba: [Andreas Tolias](https://toliaslab.org/people/)
+  name: "Andreas Tolias"
+  url: "https://toliaslab.org/people/"
+  affiliation: "Stanford University"
 
 # November 25 falls in Thanksgiving Recess (no classes).
 
