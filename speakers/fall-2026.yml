@@ -33,24 +33,28 @@
   name: "Dan Yamins"
   url: "https://stanford.edu/~yamins/"
   affiliation: "Stanford University"
+  photo: "images/speakers/dan-yamins.jpg"
 
 - date: 2026-11-04
   display_date: "November 4"
   name: "Ruijiang Li"
   url: "https://profiles.stanford.edu/ruijiang-li"
   affiliation: "Stanford University"
+  photo: "images/speakers/ruijiang-li.jpg"
 
 - date: 2026-11-11
   display_date: "November 11"
   name: "Mohsen Bayati"
   url: "https://web.stanford.edu/~bayati/"
-  affiliation: "Stanford University"
+  affiliation: "Stanford Graduate School of Business"
+  photo: "images/speakers/mohsen-bayati.jpg"
 
 - date: 2026-11-18
   display_date: "November 18"
   name: "Andreas Tolias"
   url: "https://toliaslab.org/people/"
   affiliation: "Stanford University"
+  photo: "images/speakers/andreas-tolias.jpg"
 
 # November 25 falls in Thanksgiving Recess (no classes).
 
