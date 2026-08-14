@@ -1,7 +1,8 @@
 <%
-// Picks the next seminar still to come. Prefers the next *confirmed*
-// speaker; if the nearest dates are still unbooked it falls back to the next
-// scheduled date so the block says something true rather than nothing.
+// Picks the next seminar still to come: strictly the nearest date on or
+// after today. If that date has no speaker yet the block says so, rather
+// than skipping ahead to a confirmed speaker further out — "up next" has to
+// mean the next meeting, not the next booked one.
 function asDate(v) { return v instanceof Date ? v : new Date(String(v)); }
 function valid(d) { return d && !isNaN(d.getTime()); }
 var today = new Date();
@@ -9,8 +10,7 @@ today.setHours(0, 0, 0, 0);
 var upcoming = items
   .filter(function (it) { return valid(asDate(it.date)) && asDate(it.date) >= today; })
   .sort(function (a, b) { return asDate(a.date) - asDate(b.date); });
-var named = upcoming.filter(function (it) { return it.name; });
-var next = named[0] || upcoming[0];
+var next = upcoming[0];
 %>
 <% if (next && next.name) { %>
 <section class="upnext">
