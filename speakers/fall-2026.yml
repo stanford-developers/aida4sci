@@ -14,7 +14,10 @@
 
 - date: 2026-09-30
   display_date: "September 30"
-  tba: true
+  name: "Gordon Wetzstein"
+  url: "https://stanford.edu/~gordonwz/"
+  affiliation: "Stanford University"
+  photo: "images/speakers/gordon-wetzstein.jpg"
 
 - date: 2026-10-07
   display_date: "October 7"
@@ -46,7 +49,7 @@
   display_date: "November 11"
   name: "Mohsen Bayati"
   url: "https://web.stanford.edu/~bayati/"
-  affiliation: "Stanford Graduate School of Business"
+  affiliation: "Stanford University"
   photo: "images/speakers/mohsen-bayati.jpg"
 
 - date: 2026-11-18
