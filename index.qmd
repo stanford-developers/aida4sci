@@ -19,7 +19,7 @@ include-after-body:
     <span class="hero-eyebrow">Stanford University &middot; Fall 2026</span>
     <h1 class="hero-title">AI + Data for <em>Science</em></h1>
     <p class="hero-tagline">
-      A seminar series on scientific advances driven by AI and Data.
+      An open seminar series on scientific advances driven by AI and Data.
     </p>
     <div class="hero-actions">
       <a class="btn-ember" href="schedule.html">View the schedule</a>
