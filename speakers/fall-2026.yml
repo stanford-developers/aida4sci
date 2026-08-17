@@ -73,4 +73,7 @@
 
 - date: 2026-12-02
   display_date: "December 2"
-  tba: true
+  name: "Leonidas Guibas"
+  url: "https://profiles.stanford.edu/leonidas-guibas"
+  affiliation: "Stanford University"
+  photo: "images/speakers/leonidas-guibas.jpg"
