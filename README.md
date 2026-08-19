@@ -20,6 +20,12 @@ branch — the built site is uploaded straight to Pages.
 **One-time setup:** in the repository's *Settings → Pages*, set **Source**
 to **GitHub Actions**. Until that is done the deploy step fails.
 
+Because this repository is private inside an enterprise organization,
+Pages defaults to **private** visibility — it is then served from a
+randomized `*.pages.github.io` hostname and requires a GitHub login with
+organization membership. Set the Pages visibility to **Public** in the
+same settings page, or external speakers cannot reach the schedule.
+
 The workflow also runs on a schedule, Thursdays at 08:00 UTC. That is
 deliberate: the home page's "Up next" card is resolved against the build
 date, so without a periodic rebuild the site would keep advertising a
@@ -29,8 +35,8 @@ hand from the Actions tab.
 
 ### Pointing a stanford.edu domain at it
 
-1. Ask for a CNAME record for the desired host (e.g. `stats282.stanford.edu`)
-   pointing at `bnaras.github.io`.
+1. Ask for a CNAME record for the desired host (e.g. `aida4sci.stanford.edu`)
+   pointing at `stanford-developers.github.io`.
 2. Add a file named `CNAME` at the repository root containing just that
    hostname, and list it under `project.resources` in `_quarto.yml` so it is
    copied into `_site/`.

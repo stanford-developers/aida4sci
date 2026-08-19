@@ -10,7 +10,7 @@ website:
   title: "AI + Data for Science"
   description: "AI + Data for Science seminar series at Stanford University (EE 292R / PSYCH 292R / STATS 282)"
   # Change this when a stanford.edu domain is pointed here (see README).
-  site-url: https://bnaras.github.io/stats282/
+  site-url: https://stanford-developers.github.io/aida4sci/
   favicon: images/logo-mark.svg
   navbar:
     logo: images/logo-mark-light.svg
