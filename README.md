@@ -33,15 +33,29 @@ seminar that already happened. The weekly run rolls the card over the
 morning after each Wednesday seminar. You can also trigger a rebuild by
 hand from the Actions tab.
 
-### Pointing a stanford.edu domain at it
+### The stanford.edu address
 
-1. Ask for a CNAME record for the desired host (e.g. `aida4sci.stanford.edu`)
-   pointing at `stanford-developers.github.io`.
-2. Add a file named `CNAME` at the repository root containing just that
-   hostname, and list it under `project.resources` in `_quarto.yml` so it is
-   copied into `_site/`.
-3. Set `website.site-url` in `_quarto.yml` to the new address — it feeds the
-   sitemap and the link previews shown by search engines and chat apps.
+**<https://aida4sci.stanford.edu>** is the address to hand out — on slides,
+in speaker invitations, anywhere human-facing.
+
+It is a **redirect, not a GitHub Pages custom domain**. Stanford points the
+host at their link service (`stanford.dns.bl.ink`), which answers with a
+307 to `https://stanford-developers.github.io/aida4sci/`. Paths are
+forwarded, so deep links work; the redirect inserts a harmless double
+slash (`/aida4sci//schedule.html`) that Pages resolves fine.
+
+Because DNS does **not** point at GitHub, do *not* add a `CNAME` file or set
+a custom domain under *Settings → Pages*. GitHub would attempt to verify the
+domain, fail, and unpublish the site. For the same reason `website.site-url`
+in `_quarto.yml` stays on the `github.io` address: that is where the pages
+actually live, and it is what belongs in the sitemap and in canonical link
+previews.
+
+Should Stanford ever repoint the host at `stanford-developers.github.io`
+directly, the custom-domain route becomes available: add a `CNAME` file at
+the repository root, list it under `project.resources` in `_quarto.yml` so
+it is copied into `_site/`, set the domain in *Settings → Pages*, and update
+`site-url` to match.
 
 ## "Up next" on the home page
 
