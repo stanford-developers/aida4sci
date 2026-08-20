@@ -33,29 +33,39 @@ seminar that already happened. The weekly run rolls the card over the
 morning after each Wednesday seminar. You can also trigger a rebuild by
 hand from the Actions tab.
 
-### The stanford.edu address
+### Pointing a stanford.edu address at it
 
-**<https://aida4sci.stanford.edu>** is the address to hand out — on slides,
-in speaker invitations, anywhere human-facing.
+Until a stanford.edu host is wired up, the live address is
+<https://stanford-developers.github.io/aida4sci/>, and `website.site-url` in
+`_quarto.yml` matches it.
 
-It is a **redirect, not a GitHub Pages custom domain**. Stanford points the
-host at their link service (`stanford.dns.bl.ink`), which answers with a
-307 to `https://stanford-developers.github.io/aida4sci/`. Paths are
-forwarded, so deep links work; the redirect inserts a harmless double
-slash (`/aida4sci//schedule.html`) that Pages resolves fine.
+**Ask NetDB for a DNS `CNAME` record, not a redirect.** The record wanted is
 
-Because DNS does **not** point at GitHub, do *not* add a `CNAME` file or set
-a custom domain under *Settings → Pages*. GitHub would attempt to verify the
-domain, fail, and unpublish the site. For the same reason `website.site-url`
-in `_quarto.yml` stays on the `github.io` address: that is where the pages
-actually live, and it is what belongs in the sitemap and in canonical link
-previews.
+```
+aida4sci.stanford.edu.   IN   CNAME   stanford-developers.github.io.
+```
 
-Should Stanford ever repoint the host at `stanford-developers.github.io`
-directly, the custom-domain route becomes available: add a `CNAME` file at
-the repository root, list it under `project.resources` in `_quarto.yml` so
-it is copied into `_site/`, set the domain in *Settings → Pages*, and update
-`site-url` to match.
+A first attempt produced a host pointed at Stanford's link service
+(`stanford.dns.bl.ink`), which answered with a 307 to the `github.io` URL.
+That is a forwarder, not a custom domain: the address bar still showed the
+`github.io` URL, GitHub could not issue a certificate for the name, and
+adding a `CNAME` file under it would have failed domain verification and
+unpublished the site. If NetDB will not put a `CNAME` at that name, the
+fallback is `A` records to GitHub's Pages addresses — `185.199.108.153`,
+`185.199.109.153`, `185.199.110.153`, `185.199.111.153` — but the `CNAME`
+is preferred, since it survives GitHub renumbering those.
+
+Once `dig +short aida4sci.stanford.edu` answers with `stanford-developers.github.io`:
+
+1. Add a file named `CNAME` at the repository root containing just the
+   hostname, and list it under `project.resources` in `_quarto.yml` so it is
+   copied into `_site/` on every render.
+2. Set the domain under *Settings → Pages* (or
+   `gh api -X PUT repos/stanford-developers/aida4sci/pages -f cname=aida4sci.stanford.edu`).
+3. Wait for GitHub to provision the certificate, then tick **Enforce HTTPS**.
+4. Set `website.site-url` in `_quarto.yml` to `https://aida4sci.stanford.edu/`
+   — it feeds the sitemap and the link previews shown by search engines and
+   chat apps. GitHub will then redirect the old `github.io` URL to the new one.
 
 ## "Up next" on the home page
 
