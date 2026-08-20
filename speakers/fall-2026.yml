@@ -24,7 +24,10 @@
 
 - date: 2026-10-07
   display_date: "October 7"
-  tba: true
+  name: "Olivier Gevaert"
+  url: "https://med.stanford.edu/gevaertlab/people.html"
+  affiliation: "Stanford University"
+  photo: "images/speakers/olivier-gevaert.jpg"
 
 - date: 2026-10-14
   display_date: "October 14"
