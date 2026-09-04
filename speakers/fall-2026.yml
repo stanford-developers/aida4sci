@@ -41,6 +41,8 @@
   url: "https://profiles.stanford.edu/curtis-langlotz"
   affiliation: "Stanford University"
   photo: "images/speakers/curtis-langlotz.jpg"
+  title: "Training Methods for a Medical Imaging Foundation Model"
+  abstract: "For the past several years, AI has been in an era of scale, during which the developers of frontier models have increased training dataset size and computing capacity, leading to reliable advances in performance. Healthcare has lagged this trend, in part because of the need to protect patient privacy and the difficulties of curating and aggregating AI-ready healthcare datasets. As we overcome these challenges, we have a unique opportunity to develop self-supervision methods for massive high-quality healthcare datasets. We will describe plans to train a medical imaging foundation model on Stanford’s entire digital radiology archive, approximately 2 petabytes of diagnostic medical images and associated reports. We will show how new methods can dramatically reduce the cost of training, improving the efficiency and accuracy of machine learning applied to massive imaging datasets."
 
 - date: 2026-10-21
   display_date: "October 21"
