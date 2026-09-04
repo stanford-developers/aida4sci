@@ -14,6 +14,8 @@
   url: "https://baccuslab.github.io/people/"
   affiliation: "Stanford University"
   photo: "images/speakers/stephen-baccus.jpg"
+  title: "Mechanistically interpretable models of computation in the early visual system"
+  abstract: "The early visual system has long provided a tractable setting for studying the mechanisms of neural computation. Yet even the retina and primary visual cortex transform signals through multiple excitatory and inhibitory pathways that interact nonlinearly, a complexity that until recently made the neural code for natural stimuli inaccessible. Over the past decade we have developed approaches using small convolutional neural networks fit to neural data to recover both computational and mechanistic insight into this code. In the retina, three-layer CNNs with fewer cell types than the retina itself accurately capture responses to natural scenes and generalize to reproduce a diverse set of ethological phenomena related to motion encoding, adaptation, and predictive coding. Moreover, these models are interpretable in that interneurons recorded separately, and never fit directly, correlate strongly with model interneurons. We have further developed mechanistic interpretability methods that automatically generate hypotheses for how interneurons with different spatiotemporal responses combine to produce visual computations. We have used these models to track visual computations from retina to cortex in the mouse, and to discover new phenomena. These results demonstrate a general approach for studying the circuit mechanisms of visual computation in biological and artificial networks."
 
 - date: 2026-09-30
   display_date: "September 30"
