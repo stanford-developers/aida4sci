@@ -22,9 +22,8 @@ include-after-body:
       An open seminar series on scientific advances driven by AI and Data.
     </p>
     <div class="hero-actions">
-      <a class="btn-ember" href="schedule.html">View the schedule</a>
+      <a class="btn-ember" href="schedule.html">Schedule</a>
       <a class="btn-ghost" href="subscribe.html">Subscribe</a>
-      <a class="btn-ghost" href="past.html">Archive</a>
     </div>
     <dl class="hero-facts">
       <div><dt>When</dt><dd>Wednesdays, 4:30&ndash;5:30 pm</dd></div>
