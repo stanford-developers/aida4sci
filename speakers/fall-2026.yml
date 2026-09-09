@@ -50,7 +50,9 @@
   url: "https://profiles.stanford.edu/anshul-kundaje"
   affiliation: "Stanford University"
   photo: "images/speakers/anshul-kundaje.jpg"
-  
+  title: "Decoding regulatory DNA with deep learning models"
+  abstract: "The human genome encodes functional DNA words, syntax and grammar that regulate gene activity in cell-type specific manner. Deciphering this regulatory code is essential for understanding how genes are controlled across cell types, individuals, and species, and for explaining how genetic variation shapes traits and disease. Large-scale molecular profiling efforts now provide rich, cell-type–specific regulatory maps, offering an unprecedented opportunity to apply machine learning to decode sequence-function relationships. In this talk, I will present lightweight deep learning models trained on diverse molecular profiles coupled with interpretation frameworks that can be used to (1) uncover causal sequence syntax and its context-specificity across molecular and cellular contexts, (2) detect and correct experimental biases, (3) infer fundamental biophysical parameters, (4) prioritize functional regulatory variants underlying common and rare diseases, and (5) edit and design regulatory DNA for potential therapeutic applications. Our models achieve or surpass the performance of large multi-task supervised foundation models and self-supervised DNA language models across diverse benchmarks. By systematically interpreting ~5,000 models trained on bulk and single-cell datasets spanning diverse fetal and adult contexts, we expose the remarkable complexity and context-specificity of regulatory sequence lexicons, syntax and variation encoded in the human genome. Our models and derived interpretation products serve as a foundational resource for understanding the human genome."
+
 - date: 2026-10-28
   display_date: "October 28"
   name: "Dan Yamins"
