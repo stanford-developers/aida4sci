@@ -1,0 +1,41 @@
+---
+pagetitle: "Subscribe · AI + Data for Science"
+toc: false
+---
+
+::: {.page-banner .banner-attention}
+::: {.banner-inner}
+[Subscribe]{.banner-title}
+[Announcements for the seminar series]{.banner-sub}
+:::
+:::
+
+Subscribe to our mailing list using the link below. Each week, you'll get
+a message with details on the upcoming talk: the
+speaker, the title, the abstract, and any last minute changes to
+location if necessary, plus a calendar file to add to your own
+calendar for convenience.
+
+[**Join the mailing list**](https://mailman.stanford.edu/mailman/listinfo/aida4sci-seminar)
+
+You will get a confirmation email, and the subscription only takes effect once
+you reply to it — nobody can add you to the list without your say-so. The same
+page lets you leave the list or change your address later, without contacting
+anyone: you basically manage stuff yourself.
+
+The list is announcement-only: nobody but the organizers can post to
+it, so there is no risk of spam, broadcasts to everyone on the list to
+unsubscribe etc.
+
+Anyone may join. You do not need a Stanford affiliation, and neither does
+attending.
+
+::: {.section-head}
+Attending
+:::
+
+The seminar meets **Wednesdays, 4:30–5:30 pm** in
+[CoDA E160](https://campus-map.stanford.edu/?srch=CoDA) during the academic
+quarter. Talks are **in person only** — there is no remote option. No
+registration is needed — just come. Students may enroll for credit under
+EE 292R, PSYCH 292R, or STATS 282; see the [home page](index.qmd) for details.

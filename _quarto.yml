@@ -9,8 +9,7 @@ project:
 website:
   title: "AI + Data for Science"
   description: "AI + Data for Science seminar series at Stanford University (EE 292R / PSYCH 292R / STATS 282)"
-  # Change this when a stanford.edu domain is pointed here (see README).
-  site-url: https://stanford-developers.github.io/aida4sci/
+  site-url: https://aida4sci.stanford.edu
   favicon: images/logo-mark.svg
   navbar:
     logo: images/logo-mark-light.svg
@@ -22,8 +21,10 @@ website:
         text: Home
       - href: schedule.qmd
         text: Schedule
+      - href: subscribe.qmd
+        text: Subscribe
       - href: past.qmd
-        text: Past Quarters
+        text: Archive
   page-footer:
     left: |
       Organized by

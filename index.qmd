@@ -23,11 +23,12 @@ include-after-body:
     </p>
     <div class="hero-actions">
       <a class="btn-ember" href="schedule.html">View the schedule</a>
-      <a class="btn-ghost" href="past.html">Past quarters</a>
+      <a class="btn-ghost" href="subscribe.html">Subscribe</a>
+      <a class="btn-ghost" href="past.html">Archive</a>
     </div>
     <dl class="hero-facts">
       <div><dt>When</dt><dd>Wednesdays, 4:30&ndash;5:30 pm</dd></div>
-      <div><dt>Where</dt><dd>CoDA E160</dd></div>
+      <div><dt>Where</dt><dd>CoDA E160 &middot; in person only</dd></div>
       <div><dt>Course</dt><dd>EE 292R &middot; PSYCH 292R &middot; STATS 282</dd></div>
     </dl>
   </div>
@@ -53,7 +54,8 @@ Logistics
 
 - **When:** Wednesdays, 4:30 PM
 - **Where:** [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA)
-- **Audience: ** Open to the entire Stanford community.
+- **Mode:** In person only; there is no remote option.
+- **Audience: ** Open to everyone, Stanford and non-Stanford.
 - **Course Enrollment:** Students may register via Axess under EE 292R, PSYCH 292R, or STATS 282 on a credit/no-credit basis. (_The requirement is a short write-up on one of the seminar topics, chosen by the student. Details will follow._)
 
 

@@ -1,16 +1,28 @@
 # Copy this block into the quarter's YAML file (replacing the matching
 # `tba: true` entry) when a speaker confirms. Delete any field that does
 # not apply (e.g. url or photo) — the template handles missing fields.
+#
+# `title` and `abstract` use folded block scalars (`>-`). Inside one you write
+# plain text with nothing escaped: straight quotes, apostrophes, colons, and
+# LaTeX backslashes are all literal. Only indentation matters — keep every
+# continuation line at the same depth, and never indent a line further than
+# the first one, which would make it literal instead of folded.
+#
+# Math renders properly on the website. In the announcement email and the
+# calendar file it appears verbatim as LaTeX source, which is fine — write it
+# once here and don't keep a second plain-text copy.
 
 - date: 2026-09-23
   display_date: "September 23"
   name: "Jane Doe"
   url: "https://profiles.stanford.edu/jane-doe"
   affiliation: "Stanford University"
-  title: "Talk title goes here"
-  abstract: >
-    One-paragraph abstract goes here. Plain text (no markdown); it is
-    rendered as a quoted block under the talk title.
-  bio: >
+  title: >-
+    Talk title goes here, and it may contain $\ell_1$ math
+  abstract: >-
+    One-paragraph abstract goes here. Quotes like "this" need no escaping, and
+    neither does math such as $\nabla f$. It is rendered as a quoted block
+    under the talk title.
+  bio: >-
     Optional one-paragraph speaker bio.
   photo: "images/speakers/jane-doe.jpg"

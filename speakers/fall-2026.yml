@@ -7,6 +7,15 @@
 # Fields: date (ISO, used for sorting), display_date, then either
 # `tba: true` or speaker details (name, url, affiliation, title,
 # abstract, bio, photo).
+#
+# `title` and `abstract` use folded block scalars (`>-`). Inside one of those
+# you write plain text with no escaping at all: straight quotes, apostrophes,
+# colons, and LaTeX backslashes are all literal. Only the indentation matters,
+# so keep every continuation line at the same depth. Never start a line with
+# extra indentation inside a `>-` block — that turns it literal.
+#
+# If a title contains math that would look wrong outside the website (in a
+# calendar entry or an email), add a `title_plain:` with a math-free version.
 
 - date: 2026-09-23
   display_date: "September 23"
@@ -14,8 +23,30 @@
   url: "https://baccuslab.github.io/people/"
   affiliation: "Stanford University"
   photo: "images/speakers/stephen-baccus.jpg"
-  title: "Mechanistically interpretable models of computation in the early visual system"
-  abstract: "The early visual system has long provided a tractable setting for studying the mechanisms of neural computation. Yet even the retina and primary visual cortex transform signals through multiple excitatory and inhibitory pathways that interact nonlinearly, a complexity that until recently made the neural code for natural stimuli inaccessible. Over the past decade we have developed approaches using small convolutional neural networks fit to neural data to recover both computational and mechanistic insight into this code. In the retina, three-layer CNNs with fewer cell types than the retina itself accurately capture responses to natural scenes and generalize to reproduce a diverse set of ethological phenomena related to motion encoding, adaptation, and predictive coding. Moreover, these models are interpretable in that interneurons recorded separately, and never fit directly, correlate strongly with model interneurons. We have further developed mechanistic interpretability methods that automatically generate hypotheses for how interneurons with different spatiotemporal responses combine to produce visual computations. We have used these models to track visual computations from retina to cortex in the mouse, and to discover new phenomena. These results demonstrate a general approach for studying the circuit mechanisms of visual computation in biological and artificial networks."
+  title: >-
+    Mechanistically interpretable models of computation in the early visual
+    system
+  abstract: >-
+    The early visual system has long provided a tractable setting for studying
+    the mechanisms of neural computation. Yet even the retina and primary
+    visual cortex transform signals through multiple excitatory and inhibitory
+    pathways that interact nonlinearly, a complexity that until recently made
+    the neural code for natural stimuli inaccessible. Over the past decade we
+    have developed approaches using small convolutional neural networks fit to
+    neural data to recover both computational and mechanistic insight into this
+    code. In the retina, three-layer CNNs with fewer cell types than the retina
+    itself accurately capture responses to natural scenes and generalize to
+    reproduce a diverse set of ethological phenomena related to motion
+    encoding, adaptation, and predictive coding. Moreover, these models are
+    interpretable in that interneurons recorded separately, and never fit
+    directly, correlate strongly with model interneurons. We have further
+    developed mechanistic interpretability methods that automatically generate
+    hypotheses for how interneurons with different spatiotemporal responses
+    combine to produce visual computations. We have used these models to track
+    visual computations from retina to cortex in the mouse, and to discover new
+    phenomena. These results demonstrate a general approach for studying the
+    circuit mechanisms of visual computation in biological and artificial
+    networks.
 
 - date: 2026-09-30
   display_date: "September 30"
@@ -23,26 +54,68 @@
   url: "https://stanford.edu/~gordonwz/"
   affiliation: "Stanford University"
   photo: "images/speakers/gordon-wetzstein.jpg"
-  title: "From World Models to World Agents"
-  abstract: "Generative video models have shown remarkable prowess, yet their evolution into true 'world models'—stable, controllable, and long-horizon simulators—remains a grand challenge in Spatial AI. In this talk, we detail recent advances in video world models, specifically focusing on enhancing temporal consistency and reasoning across long contexts as well as mitigating auto-regressive drift. We explore the integration of multi-agent dynamics and the development of effective human-centric conditioning and control strategies. Importantly, we demonstrate how world models enable unique strategies for training robust policies to drive autonomous agents by embracing scaling laws."
-  
+  title: >-
+    From World Models to World Agents
+  abstract: >-
+    Generative video models have shown remarkable prowess, yet their evolution
+    into true 'world models'—stable, controllable, and long-horizon
+    simulators—remains a grand challenge in Spatial AI. In this talk, we detail
+    recent advances in video world models, specifically focusing on enhancing
+    temporal consistency and reasoning across long contexts as well as
+    mitigating auto-regressive drift. We explore the integration of multi-agent
+    dynamics and the development of effective human-centric conditioning and
+    control strategies. Importantly, we demonstrate how world models enable
+    unique strategies for training robust policies to drive autonomous agents
+    by embracing scaling laws.
+
 - date: 2026-10-07
   display_date: "October 7"
   name: "Olivier Gevaert"
   url: "https://med.stanford.edu/gevaertlab/people.html"
   affiliation: "Stanford University"
   photo: "images/speakers/olivier-gevaert.jpg"
-  title: "Multimodal modeling for precision medicine"
-  abstract: "Missing data presents a persistent challenge in biomedical research. Data imputation techniques have evolved from single-modality approaches to multi-modal approaches, which show great promise for imputing one modality based on the availability of another. Recent advancements in large, pre-trained artificial intelligence (AI) models, known as foundation models, offer even more powerful solutions for data imputation. We introduce the concept of cross-modal data modeling, a methodology harnessing foundation models to impute missing data and also generate realistic synthetic samples. Multi-modal modeling empowers researchers to model complex interactions among diverse biomedical data types, including omics and imaging. This approach can illuminate how one modality influences another, facilitating in-silico exploration of disease mechanisms without the need for extensive and costly real-world data collection. We highlight ongoing efforts in multi-modal modeling in spatial omics, digital pathology and radiology, and anticipate its substantial contributions to understanding disease biology and enhancing healthcare practices."
-  
+  title: >-
+    Multimodal modeling for precision medicine
+  abstract: >-
+    Missing data presents a persistent challenge in biomedical research. Data
+    imputation techniques have evolved from single-modality approaches to
+    multi-modal approaches, which show great promise for imputing one modality
+    based on the availability of another. Recent advancements in large,
+    pre-trained artificial intelligence (AI) models, known as foundation
+    models, offer even more powerful solutions for data imputation. We
+    introduce the concept of cross-modal data modeling, a methodology
+    harnessing foundation models to impute missing data and also generate
+    realistic synthetic samples. Multi-modal modeling empowers researchers to
+    model complex interactions among diverse biomedical data types, including
+    omics and imaging. This approach can illuminate how one modality influences
+    another, facilitating in-silico exploration of disease mechanisms without
+    the need for extensive and costly real-world data collection. We highlight
+    ongoing efforts in multi-modal modeling in spatial omics, digital pathology
+    and radiology, and anticipate its substantial contributions to
+    understanding disease biology and enhancing healthcare practices.
+
 - date: 2026-10-14
   display_date: "October 14"
   name: "Curtis Langlotz"
   url: "https://profiles.stanford.edu/curtis-langlotz"
   affiliation: "Stanford University"
   photo: "images/speakers/curtis-langlotz.jpg"
-  title: "Training Methods for a Medical Imaging Foundation Model"
-  abstract: "For the past several years, AI has been in an era of scale, during which the developers of frontier models have increased training dataset size and computing capacity, leading to reliable advances in performance. Healthcare has lagged this trend, in part because of the need to protect patient privacy and the difficulties of curating and aggregating AI-ready healthcare datasets. As we overcome these challenges, we have a unique opportunity to develop self-supervision methods for massive high-quality healthcare datasets. We will describe plans to train a medical imaging foundation model on Stanford’s entire digital radiology archive, approximately 2 petabytes of diagnostic medical images and associated reports. We will show how new methods can dramatically reduce the cost of training, improving the efficiency and accuracy of machine learning applied to massive imaging datasets."
+  title: >-
+    Training Methods for a Medical Imaging Foundation Model
+  abstract: >-
+    For the past several years, AI has been in an era of scale, during which
+    the developers of frontier models have increased training dataset size and
+    computing capacity, leading to reliable advances in performance. Healthcare
+    has lagged this trend, in part because of the need to protect patient
+    privacy and the difficulties of curating and aggregating AI-ready
+    healthcare datasets. As we overcome these challenges, we have a unique
+    opportunity to develop self-supervision methods for massive high-quality
+    healthcare datasets. We will describe plans to train a medical imaging
+    foundation model on Stanford’s entire digital radiology archive,
+    approximately 2 petabytes of diagnostic medical images and associated
+    reports. We will show how new methods can dramatically reduce the cost of
+    training, improving the efficiency and accuracy of machine learning applied
+    to massive imaging datasets.
 
 - date: 2026-10-21
   display_date: "October 21"
@@ -50,8 +123,32 @@
   url: "https://profiles.stanford.edu/anshul-kundaje"
   affiliation: "Stanford University"
   photo: "images/speakers/anshul-kundaje.jpg"
-  title: "Decoding regulatory DNA with deep learning models"
-  abstract: "The human genome encodes functional DNA words, syntax and grammar that regulate gene activity in cell-type specific manner. Deciphering this regulatory code is essential for understanding how genes are controlled across cell types, individuals, and species, and for explaining how genetic variation shapes traits and disease. Large-scale molecular profiling efforts now provide rich, cell-type–specific regulatory maps, offering an unprecedented opportunity to apply machine learning to decode sequence-function relationships. In this talk, I will present lightweight deep learning models trained on diverse molecular profiles coupled with interpretation frameworks that can be used to (1) uncover causal sequence syntax and its context-specificity across molecular and cellular contexts, (2) detect and correct experimental biases, (3) infer fundamental biophysical parameters, (4) prioritize functional regulatory variants underlying common and rare diseases, and (5) edit and design regulatory DNA for potential therapeutic applications. Our models achieve or surpass the performance of large multi-task supervised foundation models and self-supervised DNA language models across diverse benchmarks. By systematically interpreting ~5,000 models trained on bulk and single-cell datasets spanning diverse fetal and adult contexts, we expose the remarkable complexity and context-specificity of regulatory sequence lexicons, syntax and variation encoded in the human genome. Our models and derived interpretation products serve as a foundational resource for understanding the human genome."
+  title: >-
+    Decoding regulatory DNA with deep learning models
+  abstract: >-
+    The human genome encodes functional DNA words, syntax and grammar that
+    regulate gene activity in cell-type specific manner. Deciphering this
+    regulatory code is essential for understanding how genes are controlled
+    across cell types, individuals, and species, and for explaining how genetic
+    variation shapes traits and disease. Large-scale molecular profiling
+    efforts now provide rich, cell-type–specific regulatory maps, offering an
+    unprecedented opportunity to apply machine learning to decode
+    sequence-function relationships. In this talk, I will present lightweight
+    deep learning models trained on diverse molecular profiles coupled with
+    interpretation frameworks that can be used to (1) uncover causal sequence
+    syntax and its context-specificity across molecular and cellular contexts,
+    (2) detect and correct experimental biases, (3) infer fundamental
+    biophysical parameters, (4) prioritize functional regulatory variants
+    underlying common and rare diseases, and (5) edit and design regulatory DNA
+    for potential therapeutic applications. Our models achieve or surpass the
+    performance of large multi-task supervised foundation models and
+    self-supervised DNA language models across diverse benchmarks. By
+    systematically interpreting ~5,000 models trained on bulk and single-cell
+    datasets spanning diverse fetal and adult contexts, we expose the
+    remarkable complexity and context-specificity of regulatory sequence
+    lexicons, syntax and variation encoded in the human genome. Our models and
+    derived interpretation products serve as a foundational resource for
+    understanding the human genome.
 
 - date: 2026-10-28
   display_date: "October 28"

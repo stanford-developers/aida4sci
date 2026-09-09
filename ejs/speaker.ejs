@@ -1,13 +1,38 @@
+<%
+// Each card gets an id of the talk's ISO date, so the calendar feed, the
+// mailing list, and anything else can deep-link to a specific talk:
+//   https://aida4sci.stanford.edu/schedule.html#2026-09-23
+//
+// Quarto does not pass the raw YAML value through: it reformats listing dates
+// for display, so `date` arrives here as "Sep 23, 2026", not "2026-09-23".
+// Handle both, plus a Date object, in case that changes.
+//
+// Local getters, not UTC ones. A non-ISO string like "Sep 23, 2026" parses as
+// local midnight, so local getters return the intended day everywhere; UTC
+// getters would roll back a day for any builder east of Greenwich. (An ISO
+// date-only string parses as UTC instead, which is why it gets its own path
+// and never goes near Date at all.)
+function anchorId(value) {
+  var text = String(value);
+  var iso = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return iso[1] + "-" + iso[2] + "-" + iso[3];
+  var d = value instanceof Date ? value : new Date(text);
+  if (isNaN(d.getTime())) return text.replace(/[^A-Za-z0-9]+/g, "-").toLowerCase();
+  var month = String(d.getMonth() + 1).padStart(2, "0");
+  var day = String(d.getDate()).padStart(2, "0");
+  return d.getFullYear() + "-" + month + "-" + day;
+}
+%>
 <% for (const item of items) { %>
 <% if (item.tba) { %>
-<div class="talk-card talk-tba">
+<div class="talk-card talk-tba" id="<%= anchorId(item.date) %>">
 <div class="talk-held">
 <span class="talk-date"><%= item.display_date %></span>
 <span class="talk-tba-label">Speaker to be announced</span>
 </div>
 </div>
 <% } else { %>
-<div class="talk-card">
+<div class="talk-card" id="<%= anchorId(item.date) %>">
 <div class="talk-photo">
 <img src="<%= item.photo ?? 'images/speakers/placeholder.svg' %>" alt="Photo of <%= item.name %>">
 </div>

@@ -1,12 +1,12 @@
 ---
-pagetitle: "Past Quarters · AI + Data for Science"
+pagetitle: "Archive · AI + Data for Science"
 toc: false
 ---
 
 ::: {.page-banner .banner-proof}
 ::: {.banner-inner}
-[Past Quarters]{.banner-title}
-[Archived schedules, speakers, and abstracts]{.banner-sub}
+[Archive]{.banner-title}
+[Past schedules, speakers, and abstracts]{.banner-sub}
 :::
 :::
 

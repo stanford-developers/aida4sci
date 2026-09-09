@@ -33,8 +33,23 @@ jobs:
       - name: Render site
         run: quarto render
 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install feed dependencies
+        run: pip install pyyaml
+
+      # Must run after `quarto render`, which creates (and cleans) _site.
+      - name: Generate calendar feed
+        run: python tools/gen_ics.py --out _site/seminar.ics
+
       - name: Check the render produced a site
-        run: test -f _site/index.html && test -f _site/schedule.html
+        run: |
+          test -f _site/index.html
+          test -f _site/schedule.html
+          test -f _site/seminar.ics
+          grep -q "BEGIN:VEVENT" _site/seminar.ics
 
       - uses: actions/upload-pages-artifact@v5
         with:
