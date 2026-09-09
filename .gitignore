@@ -3,3 +3,7 @@
 .DS_Store
 
 **/*.quarto_ipynb
+
+# The seminar announcement script imports tools/gen_ics.py, which leaves
+# bytecode behind.
+__pycache__/
