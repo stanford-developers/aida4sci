@@ -20,9 +20,9 @@ website:
     logo-alt: "AI + Data for Science home"
     title: "AI + Data for Science"
     pinned: true
+    # No Home item: the emblem and the wordmark beside it both go home, and a
+    # third link to the same page in the same bar reads as a mistake.
     left:
-      - href: index.qmd
-        text: Home
       - href: schedule.qmd
         text: Schedule
       - href: subscribe.qmd
