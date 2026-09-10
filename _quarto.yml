@@ -13,7 +13,11 @@ website:
   favicon: images/logo-mark.svg
   navbar:
     logo: images/logo-mark-light.svg
-    logo-alt: "AIDa4Sci emblem"
+    # Names the destination, not the picture. Quarto wraps the logo in its own
+    # link next to the wordmark link, so this is the only accessible name that
+    # link gets - blanking it leaves an unnamed link, which is a worse problem
+    # than the two of them pointing at the same page.
+    logo-alt: "AI + Data for Science home"
     title: "AI + Data for Science"
     pinned: true
     left:
@@ -41,7 +45,26 @@ format:
     theme: [cosmo, styles.scss]
     css: fonts.css
     toc: false
+    # Headings carry the page outline for screen readers; they do not need a
+    # hover anchor each, which would add a second link to every heading.
+    anchor-sections: false
     link-external-newwindow: true
     include-in-header:
       text: |
         <meta name="theme-color" content="#171310">
+        <!--
+          WCAG 2.4.1 Bypass Blocks. The link has to be the FIRST focusable
+          element or it cannot bypass anything, and in a Quarto website project
+          include-before-body lands inside <main>, after the whole navbar - too
+          late to be useful. So it is prepended to <body> instead. Hidden until
+          focused; see .skip-link in styles.scss.
+        -->
+        <script>
+          document.addEventListener("DOMContentLoaded", function () {
+            var link = document.createElement("a");
+            link.href = "#quarto-document-content";
+            link.className = "skip-link";
+            link.textContent = "Skip to main content";
+            document.body.insertBefore(link, document.body.firstChild);
+          });
+        </script>

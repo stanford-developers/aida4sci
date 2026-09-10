@@ -1,14 +1,11 @@
 ---
 pagetitle: "Archive · AI + Data for Science"
+title: "Archive"
+subtitle: "Past schedules, speakers, and abstracts"
 toc: false
+header-includes: |
+  <style>#title-block-header { --plate-image: url("images/banners/plate-proof.svg"); }</style>
 ---
-
-::: {.page-banner .banner-proof}
-::: {.banner-inner}
-[Archive]{.banner-title}
-[Past schedules, speakers, and abstracts]{.banner-sub}
-:::
-:::
 
 Fall 2026 is the inaugural quarter of the seminar — there are no past
 schedules yet.

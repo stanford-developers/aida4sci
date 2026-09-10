@@ -13,7 +13,10 @@ $ink:             #171310;   // night ground
 $ink-raised:      #241C17;
 $stanford-black:  #2E2D29;
 $cool-grey:       #53565A;
-$stone:           #7F7776;
+// $stone was #7F7776, which is 4.19:1 on paper and 4.05:1 on fog - under the
+// 4.5:1 WCAG 1.4.3 (AA) floor for the small type it carries (affiliations,
+// bios). Darkened just enough to clear it with headroom: 4.91 and 4.75.
+$stone:           #746C6B;
 $fog:             #F7F6F5;
 $paper:           #FBFAF8;
 $rule:            #E5E2DD;
@@ -74,6 +77,33 @@ main.content > header#title-block-header:empty {
 h1, h2, h3 {
   letter-spacing: -0.012em;
   text-wrap: balance;
+}
+
+// ---------------------------------------------------------------- skip link
+//
+// WCAG 2.4.1 Bypass Blocks. Off-canvas until it takes focus, then it lands as
+// an ember chip over the navbar — the first Tab on any page.
+
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -4rem;
+  z-index: 2000;
+  padding: 0.6rem 1rem;
+  background: $ember;
+  color: #221A10;
+  font-weight: 600;
+  border-radius: 0 0 0.3rem 0.3rem;
+  text-decoration: none;
+  transition: top 0.15s ease;
+
+  &:focus,
+  &:focus-visible {
+    top: 0;
+    color: #221A10;
+    outline: 2px solid #221A10;
+    outline-offset: 2px;
+  }
 }
 
 // ------------------------------------------------------------------ navbar
@@ -212,7 +242,9 @@ h1, h2, h3 {
       font-size: 0.66rem;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: rgba(240, 233, 224, 0.42);
+      // 0.42 alpha composited to 3.60:1 on ink - under the 4.5:1 AA floor for
+      // type this small. 0.51 lands at 4.73:1.
+      color: rgba(240, 233, 224, 0.51);
     }
 
     dd {
@@ -225,8 +257,21 @@ h1, h2, h3 {
 }
 
 // --------------------------------------------- atlas plates as page mastheads
+//
+// Quarto's own title block IS the masthead on interior pages. Giving a page a
+// `title:` and `subtitle:` yields a real <h1> as the first thing in the
+// document — which is what screen readers, and WCAG 2.4.6, want — with no
+// hand-written markup to keep in sync. Each page picks its artwork by setting
+// --plate-image on #title-block-header from its own front matter:
+//
+//     include-in-header:
+//       text: |
+//         <style>#title-block-header { --plate-image: url("images/banners/plate-fold.svg"); }</style>
+//
+// The home page sets no title, so its title block stays empty and is hidden
+// by the :empty rule above; the hero serves as its masthead instead.
 
-.page-banner {
+main.content > header#title-block-header {
   @include bleed-aligned;
   position: relative;
   margin-bottom: 2.75rem;
@@ -250,11 +295,11 @@ h1, h2, h3 {
   );
   background-image: var(--plate-scrim), var(--plate-image);
 
-  .banner-inner {
+  .quarto-title {
     width: 100%;
   }
 
-  .banner-title {
+  h1.title {
     display: block;
     font-family: $headings-font-family;
     font-weight: 600;
@@ -265,22 +310,22 @@ h1, h2, h3 {
     margin: 0;
   }
 
-  .banner-sub {
+  p.subtitle {
     display: block;
+    font-size: 1rem;
     color: rgba(240, 233, 224, 0.66);
-    margin-top: 0.55rem;
+    margin: 0.55rem 0 0;
     max-width: 34rem;
+  }
+
+  // Quarto emits an author/date block even when there is neither.
+  .quarto-title-meta {
+    display: none;
   }
 }
 
-.banner-fold      { --plate-image: url("images/banners/plate-fold.svg"); }
-.banner-proof     { --plate-image: url("images/banners/plate-proof.svg"); }
-.banner-cell      { --plate-image: url("images/banners/plate-cell.svg"); }
-.banner-field     { --plate-image: url("images/banners/plate-field.svg"); }
-.banner-attention { --plate-image: url("images/banners/plate-attention.svg"); }
-
 @media (max-width: 767px) {
-  .page-banner {
+  main.content > header#title-block-header {
     --plate-scrim: linear-gradient(
       100deg,
       rgba(23, 19, 16, 0.95) 0%,
@@ -372,7 +417,11 @@ h1, h2, h3 {
 
 // ------------------------------------------------------------ section heads
 
-.section-head {
+// Scoped to the heading itself, and it has to stay that way: pandoc copies a
+// heading's attributes onto the <section> wrapper it generates around it, so a
+// bare `.section-head` selector would set monospace small caps on the whole
+// section and every paragraph inside it would inherit them.
+h2.section-head {
   font-family: ui-monospace, "SF Mono", Menlo, monospace;
   font-size: 0.72rem;
   font-weight: 600;

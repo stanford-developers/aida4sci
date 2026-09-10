@@ -22,8 +22,8 @@ include-after-body:
       An open seminar series on scientific advances driven by AI and Data.
     </p>
     <div class="hero-actions">
-      <a class="btn-ember" href="schedule.html">Schedule</a>
-      <a class="btn-ghost" href="subscribe.html">Subscribe</a>
+      <a class="btn-ember" href="./schedule.html">Schedule</a>
+      <a class="btn-ghost" href="./subscribe.html">Subscribe</a>
     </div>
     <dl class="hero-facts">
       <div><dt>When</dt><dd>Wednesdays, 4:30&ndash;5:30 pm</dd></div>
@@ -37,9 +37,7 @@ include-after-body:
 ::: {#upnext}
 :::
 
-::: {.section-head}
-About the seminar
-:::
+## About the seminar {.section-head}
 
 This seminar series brings people together to hear about and discuss groundbreaking research at the intersection of advanced AI models and valuable datasets across diverse scientific domains. We hope the seminar serves as an informal watering hole where researchers across academia and industry meet, exchange findings, and spark new collaborations.
 
@@ -47,9 +45,7 @@ We welcome a wide range of topics and encourage community suggestions. Our initi
 
 Whether you build frontier models or apply them to domain-specific challenges, join us to explore where AI-driven research is heading next.
 
-::: {.section-head}
-Logistics
-:::
+## Logistics {.section-head}
 
 - **When:** Wednesdays, 4:30 PM
 - **Where:** [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA)
@@ -58,9 +54,7 @@ Logistics
 - **Course Enrollment:** Students may register via Axess under EE 292R, PSYCH 292R, or STATS 282 on a credit/no-credit basis. (_The requirement is a short write-up on one of the seminar topics, chosen by the student. Details will follow._)
 
 
-::: {.section-head}
-Organizers
-:::
+## Organizers {.section-head}
 
 ::: {.organizers}
 ::: {.organizer}

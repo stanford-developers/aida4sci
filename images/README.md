@@ -30,20 +30,33 @@ drawings share one art direction:
 | `banners/plate-field.svg` | Physical fields / loss surfaces |
 | `banners/plate-attention.svg` | The attention mechanism |
 
-To put one on a page, add its class to a banner div:
+The masthead *is* Quarto's title block, styled. A page gets one by giving
+itself a title, a subtitle, and a plate — all in its front matter:
 
-```markdown
-::: {.page-banner .banner-cell}
-::: {.banner-inner}
-[Winter 2027]{.banner-title}
-[Speakers and topics]{.banner-sub}
-:::
-:::
+```yaml
+---
+pagetitle: "Schedule · Winter 2027 · AI + Data for Science"
+title: "Schedule · Winter 2027"
+subtitle: "Speakers and topics"
+header-includes: |
+  <style>#title-block-header { --plate-image: url("images/banners/plate-cell.svg"); }</style>
+---
 ```
 
-Available: `.banner-fold`, `.banner-proof`, `.banner-cell`,
-`.banner-field`, `.banner-attention`. Giving each quarter its own
-masthead is the intended use.
+Point `--plate-image` at any of the five plates above. Giving each quarter
+its own masthead is the intended use.
+
+Use `header-includes`, not `include-in-header`, for that style block. A
+page-level `include-in-header` *replaces* the project-level one in
+`_quarto.yml` rather than adding to it, which would silently drop the skip
+link and the theme-color meta from that page. `header-includes` merges.
+
+Writing the masthead by hand instead is a mistake worth naming: Quarto hoists
+an `<h1>` into its own title block whenever the heading is the first element
+in its container, which silently empties a hand-built banner and drops the
+title onto the page below it. Letting the title block be the banner sidesteps
+that, and gives every page a real `<h1>` first in the document — which is what
+screen readers and WCAG 2.4.6 want.
 
 The home page does not use these: its hero is a live particle simulation
 (`js/convergence.js`) of measurements streaming in and igniting at a
