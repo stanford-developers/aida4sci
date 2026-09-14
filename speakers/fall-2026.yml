@@ -166,7 +166,10 @@
 
 - date: 2026-11-11
   display_date: "November 11"
-  name: "TBA"
+  name: "Alex Pentland"
+  url: "https://profiles.stanford.edu/alex-pentland"
+  affiliation: "Stanford University"
+  photo: "images/speakers/alex-pentland.jpg"
 
 - date: 2026-11-18
   display_date: "November 18"
