@@ -11,6 +11,18 @@ var upcoming = items
   .filter(function (it) { return valid(asDate(it.date)) && asDate(it.date) >= today; })
   .sort(function (a, b) { return asDate(a.date) - asDate(b.date); });
 var next = upcoming[0];
+
+// Room. Same rule as ejs/speaker.ejs (keep DEFAULT_ROOM in step): an entry
+// carries `location` only when it meets somewhere other than the usual room.
+// This block is the first thing most visitors read, so a changed room is
+// spelled out here in full, with both rooms named.
+var DEFAULT_ROOM = "CoDA E160";
+function mapLink(room) {
+  return "https://campus-map.stanford.edu/?srch=" + encodeURIComponent(room.split(/\s+/)[0]);
+}
+var room = next && next.location ? String(next.location).trim() : DEFAULT_ROOM;
+var roomChanged = room !== DEFAULT_ROOM;
+var roomUrl = next && next.location_url ? next.location_url : mapLink(room);
 %>
 <% if (next && next.name) { %>
 <section class="upnext">
@@ -22,6 +34,11 @@ var next = upcoming[0];
 <h2 class="upnext-name"><%= next.name %></h2>
 <% if (next.affiliation) { %><div class="upnext-affiliation"><%= next.affiliation %></div><% } %>
 <% if (next.title) { %><p class="upnext-talk"><%= next.title %></p><% } %>
+<% if (roomChanged) { %>
+<p class="room-notice"><strong>Different room this week:</strong> <a href="<%= roomUrl %>"><%= room %></a>, not <%= DEFAULT_ROOM %>.</p>
+<% } else { %>
+<p class="upnext-room">4:30 pm &middot; <a href="<%= roomUrl %>"><%= room %></a></p>
+<% } %>
 <a class="upnext-link" href="schedule.html">See the full schedule</a>
 </div>
 </section>
@@ -30,6 +47,9 @@ var next = upcoming[0];
 <div class="upnext-body">
 <span class="upnext-eyebrow">Up next &middot; <%= next.display_date %></span>
 <p class="upnext-talk">The speaker for this date has not been announced yet.</p>
+<% if (roomChanged) { %>
+<p class="room-notice"><strong>Different room this week:</strong> <a href="<%= roomUrl %>"><%= room %></a>, not <%= DEFAULT_ROOM %>.</p>
+<% } %>
 <a class="upnext-link" href="schedule.html">See the full schedule</a>
 </div>
 </section>

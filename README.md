@@ -2,7 +2,8 @@
 
 Quarto website for the Stanford seminar series **AI + Data for
 Science** (EE 292R / PSYCH 292R / STATS 282), Wednesdays 4:30–5:30 pm
-in CoDA E160.
+in CoDA E160. A talk held in another room carries a `location` field in
+the quarter's YAML file; see "A talk in a different room" below.
 
 ## Local preview and build
 
@@ -96,6 +97,26 @@ quarter is past, the block disappears rather than showing something stale.
    field. If there is no photo, omit the field and a neutral
    placeholder is used.
 4. `quarto render`.
+
+## A talk in a different room
+
+The usual room, CoDA E160, is not written into the YAML. Add
+`location: "Packard 101"` to an entry **only** when that talk meets
+somewhere else. Both templates then flag it: the schedule card and the
+home page's "Up next" block get an ember notice naming both rooms
+("Packard 101, not CoDA E160"), while every other card quietly shows
+CoDA E160 beside its date. Leaving `location` off is what means "the
+usual room" — do not add it to every entry.
+
+The room links to the campus map by its building name; add
+`location_url:` to point somewhere else. The usual room itself is a
+constant, `DEFAULT_ROOM`, near the top of both `ejs/speaker.ejs` and
+`ejs/upnext.ejs`; if the seminar ever moves for good, change it in both,
+and in the prose on the home, schedule, and subscribe pages.
+
+The schedule page also carries a callout listing the exceptions for the
+quarter, and the home page's Logistics section repeats it. Those two are
+prose, so update them by hand when the exceptions change.
 
 ## Starting a new quarter
 

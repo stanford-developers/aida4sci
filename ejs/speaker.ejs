@@ -22,6 +22,19 @@ function anchorId(value) {
   var day = String(d.getDate()).padStart(2, "0");
   return d.getFullYear() + "-" + month + "-" + day;
 }
+
+// Room. The quarter meets in one room; an entry carries `location` only when
+// it is somewhere else. The usual room is shown quietly on every card so the
+// exception has something to stand against, and the exception gets a notice
+// that names both rooms - "Packard 101, not CoDA E160" - so nobody has to
+// remember which is which. Keep DEFAULT_ROOM in step with ejs/upnext.ejs.
+var DEFAULT_ROOM = "CoDA E160";
+function mapLink(room) {
+  return "https://campus-map.stanford.edu/?srch=" + encodeURIComponent(room.split(/\s+/)[0]);
+}
+function roomOf(item) { return item.location ? String(item.location).trim() : DEFAULT_ROOM; }
+function roomChanged(item) { return roomOf(item) !== DEFAULT_ROOM; }
+function roomUrl(item) { return item.location_url ?? mapLink(roomOf(item)); }
 %>
 <% for (const item of items) { %>
 <% if (item.tba) { %>
@@ -29,6 +42,7 @@ function anchorId(value) {
 <div class="talk-held">
 <span class="talk-date"><%= item.display_date %></span>
 <span class="talk-tba-label">Speaker to be announced</span>
+<% if (roomChanged(item)) { %><span class="talk-room talk-room-changed">Room: <a href="<%= roomUrl(item) %>"><%= roomOf(item) %></a>, not <%= DEFAULT_ROOM %></span><% } %>
 </div>
 </div>
 <% } else { %>
@@ -37,7 +51,13 @@ function anchorId(value) {
 <img src="<%= item.photo ?? 'images/speakers/placeholder.svg' %>" alt="Photo of <%= item.name %>">
 </div>
 <div class="talk-body">
+<div class="talk-meta">
 <span class="talk-date"><%= item.display_date %></span>
+<% if (!roomChanged(item)) { %><span class="talk-room"><%= DEFAULT_ROOM %></span><% } %>
+</div>
+<% if (roomChanged(item)) { %>
+<p class="room-notice"><strong>Different room this week:</strong> <a href="<%= roomUrl(item) %>"><%= roomOf(item) %></a>, not <%= DEFAULT_ROOM %>.</p>
+<% } %>
 <h2 class="talk-speaker">
 <% if (item.url) { %><a href="<%= item.url %>"><%= item.name %></a><% } else { %><%= item.name %><% } %>
 </h2>

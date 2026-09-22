@@ -26,3 +26,7 @@
   bio: >-
     Optional one-paragraph speaker bio.
   photo: "images/speakers/jane-doe.jpg"
+  # Only when the talk is NOT in the usual room (CoDA E160). Leaving it off
+  # means the usual room; setting it makes the card and the home page's
+  # "Up next" block call out the change.
+  location: "Packard 101"

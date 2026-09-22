@@ -396,6 +396,16 @@ main.content > header#title-block-header {
     margin: 0 0 0.75rem;
   }
 
+  // time and the usual room, stated plainly so the block stands on its own
+  .upnext-room {
+    font-size: 0.95rem;
+    color: $stone;
+    margin: -0.35rem 0 0.75rem;
+    a { color: $stone; }
+  }
+
+  .room-notice { margin-bottom: 0.9rem; }
+
   .upnext-link {
     font-weight: 600;
     text-decoration: none;
@@ -508,16 +518,35 @@ h2.section-head {
     border: 1px solid $rule;
   }
 
-  .talk-date {
+  // date and room share one eyebrow line: the date in cardinal, the usual
+  // room in stone beside it. When the room is NOT the usual one the eyebrow
+  // carries the date alone and a .room-notice follows it instead.
+  .talk-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.9rem;
+    margin-bottom: 0.5rem;
+
+    p { margin: 0; }   // pandoc wraps the spans in a paragraph
+  }
+
+  .talk-date + .talk-room { margin-left: 0.6rem; }
+
+  .talk-date,
+  .talk-room {
     display: inline-block;
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
     font-size: 0.72rem;
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: $cardinal;
-    margin-bottom: 0.5rem;
   }
+
+  .talk-date { color: $cardinal; }
+  .talk-room { color: $stone; }
+
+  .room-notice { margin: 0 0 0.75rem; }
 
   .talk-speaker {
     font-family: $headings-font-family;
@@ -573,11 +602,49 @@ h2.section-head {
     flex-wrap: wrap;
   }
 
-  .talk-date { margin-bottom: 0; }
-
   .talk-tba-label {
     color: $stone;
     font-style: italic;
+  }
+
+  // a held slot in a different room: same message, inline, so the row
+  // stays one line
+  .talk-room-changed {
+    font-family: $font-family-sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0;
+    text-transform: none;
+    color: $cardinal;
+    a { color: $cardinal; }
+  }
+}
+
+// ---------------------------------------------------------- room notice
+//
+// A talk that is not in the usual room. Used on the schedule cards and in
+// the home page's "Up next" block, and it is deliberately the loudest thing
+// on either: an ember field with the message in full, both rooms named. The
+// words carry the meaning (WCAG 1.4.1), the color only draws the eye to them.
+
+.room-notice {
+  display: inline-block;
+  max-width: 100%;
+  background: rgba($ember, 0.18);
+  border-left: 4px solid $ember;
+  border-radius: 0 0.4rem 0.4rem 0;
+  padding: 0.45rem 0.85rem 0.45rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.45;
+  color: $stanford-black;
+
+  strong { color: $cardinal; }
+
+  a {
+    font-weight: 700;
+    color: $cardinal;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
   }
 }
 

@@ -8,6 +8,12 @@
 # `tba: true` or speaker details (name, url, affiliation, title,
 # abstract, bio, photo).
 #
+# Room: the seminar meets in CoDA E160 unless an entry says otherwise. Add
+# `location:` ONLY to an entry that meets somewhere else — the templates then
+# flag that card and the home page's "Up next" block with a "different room"
+# notice, so leaving the field off is what says "the usual room". Optional
+# `location_url:` overrides the default campus-map link for that room.
+#
 # `title` and `abstract` use folded block scalars (`>-`). Inside one of those
 # you write plain text with no escaping at all: straight quotes, apostrophes,
 # colons, and LaTeX backslashes are all literal. Only the indentation matters,
@@ -23,6 +29,7 @@
   url: "https://baccuslab.github.io/people/"
   affiliation: "Stanford University"
   photo: "images/speakers/stephen-baccus.jpg"
+  location: "Packard 101"
   title: >-
     Mechanistically interpretable models of computation in the early visual
     system
@@ -74,6 +81,7 @@
   url: "https://med.stanford.edu/gevaertlab/people.html"
   affiliation: "Stanford University"
   photo: "images/speakers/olivier-gevaert.jpg"
+  location: "Packard 101"
   title: >-
     Multimodal modeling for precision medicine
   abstract: >-

@@ -14,9 +14,16 @@ header-includes: |
 ---
 
 The seminar meets **Wednesdays, 4:30–5:30 pm** in
-[CoDA E160](https://campus-map.stanford.edu/?srch=CoDA), in person only. Any
-changes to the schedule will be reflected here, so check this page often.
+[CoDA E160](https://campus-map.stanford.edu/?srch=CoDA), in person only.
+Each talk below states its room, and any talk held elsewhere is flagged.
 
+::: {.callout-warning title="Two talks meet in a different room"}
+The **September 23** and **October 7** talks are in
+[**Packard 101**](https://campus-map.stanford.edu/?srch=Packard), not CoDA
+E160. All other talks are in CoDA E160 as usual.
+:::
+
+Any changes to the schedule will be reflected here, so check this page often.
 Or [subscribe](subscribe.qmd) and we will send you the coming week's talk every
 Sunday.
 

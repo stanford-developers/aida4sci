@@ -48,7 +48,11 @@ Whether you build frontier models or apply them to domain-specific challenges, j
 ## Logistics {.section-head}
 
 - **When:** Wednesdays, 4:30 PM
-- **Where:** [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA)
+- **Where:** [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA) is the
+  usual room. A talk held elsewhere is flagged on the
+  [schedule](schedule.qmd) and in the "Up next" box above. This fall, the
+  **September 23** and **October 7** talks meet in
+  [Packard 101](https://campus-map.stanford.edu/?srch=Packard).
 - **Mode:** In person only; there is no remote option.
 - **Audience: ** Open to everyone, Stanford and non-Stanford.
 - **Course Enrollment:** Students may register via Axess under EE 292R, PSYCH 292R, or STATS 282 on a credit/no-credit basis. (_The requirement is a short write-up on one of the seminar topics, chosen by the student. Details will follow._)
