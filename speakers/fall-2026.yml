@@ -164,6 +164,17 @@
   url: "https://stanford.edu/~yamins/"
   affiliation: "Stanford University"
   photo: "images/speakers/dan-yamins.jpg"
+  title: >-
+    Large-Scale Computational Models at the Neuroscience-AI Intersection
+  abstract: >-
+    I'll first give a primer on the recent history of the recently-developed
+    field of Cognitive NeuroAI, which uses neural networks to explain the brain
+    and human behavior. Then I'll discuss two new large-scale projects at the
+    cutting edge of Cognitive NeuroAI: Probabilistic Structure Integration
+    (PSI), a new class of cognitively-inspired world models of use in computer
+    vision, robotics, and neural modeling applications; and the Stanford
+    Digital Brain Project, a recently-launched experimental and computational
+    effort to create a massive digital twin of the human brain.
 
 - date: 2026-11-04
   display_date: "November 4"
