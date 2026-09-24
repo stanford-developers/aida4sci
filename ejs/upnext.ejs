@@ -12,6 +12,22 @@ var upcoming = items
   .sort(function (a, b) { return asDate(a.date) - asDate(b.date); });
 var next = upcoming[0];
 
+// "See the full schedule" jumps to this talk's card, whose id is its ISO
+// date. Same function as ejs/speaker.ejs (keep the two in step): Quarto hands
+// `date` over as "Sep 23, 2026", which parses as local midnight, so local
+// getters give the right day.
+function anchorId(value) {
+  var text = String(value);
+  var iso = text.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return iso[1] + "-" + iso[2] + "-" + iso[3];
+  var d = value instanceof Date ? value : new Date(text);
+  if (isNaN(d.getTime())) return text.replace(/[^A-Za-z0-9]+/g, "-").toLowerCase();
+  var month = String(d.getMonth() + 1).padStart(2, "0");
+  var day = String(d.getDate()).padStart(2, "0");
+  return d.getFullYear() + "-" + month + "-" + day;
+}
+var scheduleUrl = next ? "schedule.html#" + anchorId(next.date) : "schedule.html";
+
 // Room. Same rule as ejs/speaker.ejs (keep DEFAULT_ROOM in step): an entry
 // carries `location` only when it meets somewhere other than the usual room.
 // This block is the first thing most visitors read, so a changed room is
@@ -39,7 +55,7 @@ var roomUrl = next && next.location_url ? next.location_url : mapLink(room);
 <% } else { %>
 <p class="upnext-room">4:30 pm &middot; <a href="<%= roomUrl %>"><%= room %></a></p>
 <% } %>
-<a class="upnext-link" href="schedule.html">See the full schedule</a>
+<a class="upnext-link" href="<%= scheduleUrl %>">See the full schedule</a>
 </div>
 </section>
 <% } else if (next) { %>
@@ -50,7 +66,7 @@ var roomUrl = next && next.location_url ? next.location_url : mapLink(room);
 <% if (roomChanged) { %>
 <p class="room-notice"><strong>Different room this week:</strong> <a href="<%= roomUrl %>"><%= room %></a>, not <%= DEFAULT_ROOM %>.</p>
 <% } %>
-<a class="upnext-link" href="schedule.html">See the full schedule</a>
+<a class="upnext-link" href="<%= scheduleUrl %>">See the full schedule</a>
 </div>
 </section>
 <% } %>
