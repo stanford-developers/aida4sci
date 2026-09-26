@@ -182,13 +182,45 @@
   url: "https://profiles.stanford.edu/ruijiang-li"
   affiliation: "Stanford University"
   photo: "images/speakers/ruijiang-li.jpg"
-
+  title: >-
+    Multi-Modal Foundation Models for Precision Medicine
+  abstract: >-
+    Clinical decision-making requires integrating diverse data types — medical
+    images, clinical text, and molecular omics profiles. AI methods that
+    effectively leverage multi-modal data hold transformative potential for
+    biomedical discovery and clinical care. This talk explores how multi-modal
+    foundation models can generate biologically relevant insights and clinically
+    meaningful predictions, such as identifying which patients respond to
+    immunotherapy. I will present our recent work developing multi-modal
+    foundation models that integrate pathology images with text, as well
+    as single-cell spatial transcriptomics and spatial proteomics, showing
+    how these advances can improve diagnostic accuracy and guide personalized
+    cancer treatment.
+       
 - date: 2026-11-11
   display_date: "November 11"
   name: "Alex Pentland"
   url: "https://profiles.stanford.edu/alex-pentland"
-  affiliation: "Stanford University"
+  affiliation: "HAI, Stanford University"
   photo: "images/speakers/alex-pentland.jpg"
+  title: >-
+    Detecting coordinated behavior across multiple fully encrypted domains
+  abstract: >-
+    Coordinated inauthentic behavior threatens societal stability, markets,
+    and security. Advances in generative AI amplify these threats, enabling
+    effortless content creation, amplifying actors’ influence. Detection is
+    hindered by cross-domain activity, where pseudonymous profiles operate
+    across encrypted platforms, and by privacy constraints limiting content
+    analysis. We develop a robust and scalable cross-domain identity matching
+    framework, based on bursty dynamics, independent of content or interaction
+    data. It outperforms state-of-the-art temporal and structural approaches,
+    remains resilient to incomplete data, and is fairly stable over time.
+    By framing identity matching within the “network of networks” perspective,
+    we demonstrate how coordinated behavior propagates across domains. This dual
+    methodological and theoretical contribution paves the way for innovative
+    strategies to combat digital threats in an increasingly complex, encrypted,
+    and adversarial landscape.   Joint work with Shahar Somin, Jeremy Kepner,
+    and Tom Cohen. 
 
 - date: 2026-11-18
   display_date: "November 18"
