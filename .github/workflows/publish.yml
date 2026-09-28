@@ -50,6 +50,7 @@ jobs:
           test -f _site/schedule.html
           test -f _site/seminar.ics
           grep -q "BEGIN:VEVENT" _site/seminar.ics
+          grep -q "bookings.cloud.microsoft" _site/pickdate/index.html
 
       - uses: actions/upload-pages-artifact@v5
         with:

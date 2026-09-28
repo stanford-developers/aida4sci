@@ -77,6 +77,18 @@ GitHub's Pages addresses — `185.199.108.153`, `185.199.109.153`,
 `185.199.110.153`, `185.199.111.153` — but the `CNAME` is preferred, since it
 survives GitHub renumbering those.
 
+### The /pickdate short link
+
+<https://aida4sci.stanford.edu/pickdate> sends speakers to the quarter's
+Microsoft Bookings page. GitHub Pages has no server-side redirects, so
+`pickdate/index.html` is a plain HTML page that forwards in the browser (an
+immediate meta refresh, a script, and a fallback link). It is copied into
+`_site/` only because `pickdate/` is listed under `project.resources` in
+`_quarto.yml`; drop that line and the link breaks.
+
+When a new quarter gets a new Bookings page, replace the URL in
+`pickdate/index.html`. It appears four times; change them all.
+
 ## "Up next" on the home page
 
 The home page shows the next seminar automatically — there is nothing to

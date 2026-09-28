@@ -5,6 +5,8 @@ project:
     - images/
     - fonts/
     - js/
+    # Plain HTML redirect for the /pickdate short link; see README.
+    - pickdate/
 
 website:
   title: "AI + Data for Science"
