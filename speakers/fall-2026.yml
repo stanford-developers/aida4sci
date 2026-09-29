@@ -228,6 +228,27 @@
   url: "https://toliaslab.org/people/"
   affiliation: "Stanford University"
   photo: "images/speakers/andreas-tolias.jpg"
+  title: >-
+    Decrypting the Brain with AI
+  abstract: >-
+    You … your memories and ambitions, your sense of personal identity
+    and free will, are in fact no more than the behavior of a vast
+    assembly of nerve cells …"  Crick's words capture the profound
+    challenge of decrypting the neural code. This challenge has long
+    been hindered by two limitations: our ability to record activity
+    from large neuronal populations under the complex, variable
+    conditions in which brains evolved, and our capacity to model the
+    intricate relationships between stimuli, behaviors, and neural
+    activity. Recent breakthroughs are beginning to overcome these
+    barriers. Cutting-edge technologies now enable large-scale
+    recordings, while AI can construct predictive brain models that
+    link stimuli, neural activity, and behavior. These digital twins
+    open the door to virtually limitless in silico experiments,
+    testing theories that would otherwise be impossible to probe at
+    scale in living brains. I will discuss our work building brain
+    foundation models and digital twins to uncover the mechanisms of
+    neural representation, with predictions validated through
+    closed-loop experiments.
 
 # November 25 falls in Thanksgiving Recess (no classes).
 
