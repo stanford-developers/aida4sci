@@ -35,4 +35,4 @@ quarter. A talk held in a different room is flagged on the
 [schedule](schedule.qmd) and in the weekly email. Talks are **in person
 only** — there is no remote option. No
 registration is needed — just come. Students may enroll for credit under
-EE 292R, PSYCH 292R, or STATS 282; see the [home page](index.qmd) for details.
+CS 292, EE 292R, PSYCH 292R, or STATS 282; see the [home page](index.qmd) for details.

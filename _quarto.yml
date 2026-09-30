@@ -10,7 +10,7 @@ project:
 
 website:
   title: "AI + Data for Science"
-  description: "AI + Data for Science seminar series at Stanford University (EE 292R / PSYCH 292R / STATS 282)"
+  description: "AI + Data for Science seminar series at Stanford University (CS 292 / EE 292R / PSYCH 292R / STATS 282)"
   site-url: https://aida4sci.stanford.edu
   favicon: images/logo-mark.svg
   navbar:
@@ -39,7 +39,7 @@ website:
       [Brian Wandell](https://wandell.vista.su.domains/blog/), and
       [Gordon Wetzstein](https://stanford.edu/~gordonwz/)
     right: |
-      EE 292R · PSYCH 292R · STATS 282<br>
+      CS 292 · EE 292R · PSYCH 292R · STATS 282<br>
       Stanford University
 
 format:

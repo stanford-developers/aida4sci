@@ -31,7 +31,7 @@ from gen_ics import (  # noqa: E402  (shared YAML loading and defaults)
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 DEFAULT_ROOM = "CoDA E160"   # keep in step with ejs/speaker.ejs
 PLATE = "images/banners/plate-fold.svg"
-COURSES = "EE 292R · PSYCH 292R · STATS 282"
+COURSES = "CS 292 · EE 292R · PSYCH 292R · STATS 282"
 SITE = "aida4sci.stanford.edu"
 
 CSS = """
