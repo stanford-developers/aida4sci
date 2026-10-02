@@ -92,15 +92,18 @@ When a new quarter gets a new Bookings page, replace the URL in
 ## "Up next" on the home page
 
 The home page shows the next seminar automatically — there is nothing to
-update by hand. `ejs/upnext.ejs` reads the same quarter YAML file as the
-schedule and picks the next *confirmed* speaker whose date has not passed.
-If the nearest dates are still unbooked it falls back to the next
-scheduled date and says the speaker is not announced yet; once the whole
-quarter is past, the block disappears rather than showing something stale.
+update by hand. `ejs/upnext.ejs` reads the same quarter YAML files as the
+schedule (all of them are listed under `contents` in `index.qmd`) and picks
+the nearest date that has not passed. If that date is still unbooked it
+says the speaker is not announced yet rather than skipping ahead; once
+every listed date is past, the block disappears rather than showing
+something stale. Because every quarter of the year is listed, the card
+rolls from the last Fall talk to the first Winter one on its own.
 
 ## Adding a speaker
 
-1. Open the current quarter's data file, e.g. `speakers/fall-2026.yml`.
+1. Open the quarter's data file: `speakers/fall-2026.yml`,
+   `speakers/winter-2027.yml`, or `speakers/spring-2027.yml`.
 2. Replace the `tba: true` entry for the chosen date with a filled-in
    block — copy the example in `speakers/_template.yml`. Fields you
    omit (url, photo, bio, …) are simply not shown.
@@ -130,15 +133,47 @@ The schedule page also carries a callout listing the exceptions for the
 quarter, and the home page's Logistics section repeats it. Those two are
 prose, so update them by hand when the exceptions change.
 
-## Starting a new quarter
+## Quarters and the academic year
 
-1. Create `speakers/<quarter>.yml` (e.g. `speakers/2027-winter.yml`)
-   with one entry per seminar Wednesday.
-2. Point the listing in `schedule.qmd` at the new file and update its
-   title.
-3. Archive the finished quarter: create `past/<quarter>.qmd` with the
-   same listing front matter pointing at the old YAML file, and link it
-   from `past.qmd`.
+The schedule page shows every quarter of the current academic year at
+once — Fall, Winter, and Spring, each under its own heading — so speakers
+can see the dates still open for the year, and `/pickdate` can book any of
+them. All three quarters have to be on the one page: the calendar feed and
+the "Up next" card deep-link to a talk as `schedule.html#<ISO date>`, and a
+per-quarter page would break those links.
+
+Everything flows from the YAML files, so the whole year is wired up when:
+
+- `speakers/<season>-<year>.yml` exists for each quarter (e.g.
+  `speakers/winter-2027.yml`), with one entry per seminar Wednesday —
+  `tba: true` until a speaker confirms;
+- `schedule.qmd` has a listing (and a heading plus `::: {#id}` block) for
+  each file;
+- `index.qmd` lists each file under the `upnext` listing's `contents`.
+
+The calendar feed needs nothing: `tools/gen_ics.py` reads every file in
+`speakers/`, so unbooked dates publish as "speaker TBA" events that update
+in place when a name goes in.
+
+### Adding the next academic year
+
+1. Check the dates against the [Stanford academic
+   calendar](https://studentservices.stanford.edu/calendar-events/academic-calendars)
+   — drop any Wednesday that is a holiday or recess, as November 25, 2026
+   was dropped for Thanksgiving.
+2. Create the three YAML files and add them to `schedule.qmd` and
+   `index.qmd` as above. Update the year in the schedule page's title and
+   the home page's hero eyebrow.
+3. Set the Bookings page's availability to match, one window per quarter
+   with the breaks between them not bookable.
+
+### Archiving a finished year
+
+Create `past/<season>-<year>.qmd` for each quarter, with the same listing
+front matter pointing at its YAML file, and link them from `past.qmd`. Then
+remove those quarters from `schedule.qmd` and from the `upnext` contents in
+`index.qmd`. Leave the YAML files where they are — the archive pages and
+the calendar feed keep reading them.
 
 ## Structure
 

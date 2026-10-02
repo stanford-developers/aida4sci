@@ -4,8 +4,12 @@ toc: false
 listing:
   - id: upnext
     template: ejs/upnext.ejs
+    # Every quarter of the year, so the card rolls from the last Fall talk
+    # to the first Winter one without anyone touching this file.
     contents:
       - speakers/fall-2026.yml
+      - speakers/winter-2027.yml
+      - speakers/spring-2027.yml
     sort: "date asc"
 include-after-body:
   text: |
@@ -16,7 +20,7 @@ include-after-body:
 <section class="hero-night">
   <canvas id="convergence" aria-hidden="true"></canvas>
   <div class="hero-content">
-    <span class="hero-eyebrow">Stanford University &middot; Fall 2026</span>
+    <span class="hero-eyebrow">Stanford University &middot; 2026&ndash;27</span>
     <h1 class="hero-title">AI + Data for <em>Science</em></h1>
     <p class="hero-tagline">
       An open seminar series on scientific advances driven by AI and Data.
@@ -50,7 +54,7 @@ Whether you build frontier models or apply them to domain-specific challenges, j
 - **When:** Wednesdays, 4:30 PM
 - **Where:** [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA) is the
   usual room. A talk held elsewhere is flagged on the
-  [schedule](schedule.qmd) and in the "Up next" box above. This fall, the
+  [schedule](schedule.qmd) and in the "Up next" box above. In Fall 2026, the
   **September 23** and **October 7** talks meet in
   [Packard 101](https://campus-map.stanford.edu/?srch=Packard).
 - **Mode:** In person only; there is no remote option.

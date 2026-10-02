@@ -1,21 +1,44 @@
 ---
-pagetitle: "Schedule · Fall 2026 · AI + Data for Science"
-title: "Schedule · Fall 2026"
+pagetitle: "Schedule · 2026–27 · AI + Data for Science"
+title: "Schedule · 2026–27"
 subtitle: "Speakers and topics · Wednesdays 4:30–5:30 pm · CoDA E160"
+# One listing per quarter, all on this page. The calendar feed and the home
+# page's "Up next" card deep-link to a talk as schedule.html#<ISO date>, so
+# every quarter of the year has to render here, not on a page of its own.
 listing:
-  id: talks
-  template: ejs/speaker.ejs
-  contents:
-    - speakers/fall-2026.yml
-  sort: "date asc"
+  - id: talks-fall-2026
+    template: ejs/speaker.ejs
+    contents:
+      - speakers/fall-2026.yml
+    sort: "date asc"
+  - id: talks-winter-2027
+    template: ejs/speaker.ejs
+    contents:
+      - speakers/winter-2027.yml
+    sort: "date asc"
+  - id: talks-spring-2027
+    template: ejs/speaker.ejs
+    contents:
+      - speakers/spring-2027.yml
+    sort: "date asc"
 toc: false
 header-includes: |
   <style>#title-block-header { --plate-image: url("images/banners/plate-fold.svg"); }</style>
 ---
 
 The seminar meets **Wednesdays, 4:30–5:30 pm** in
-[CoDA E160](https://campus-map.stanford.edu/?srch=CoDA), in person only.
-Each talk below states its room, and any talk held elsewhere is flagged.
+[CoDA E160](https://campus-map.stanford.edu/?srch=CoDA), in person only,
+through all three quarters of the academic year:
+[Fall 2026](#fall-2026), [Winter 2027](#winter-2027), and
+[Spring 2027](#spring-2027). Each talk below states its room, and any talk
+held elsewhere is flagged. Speakers for Winter and Spring are added here as
+they confirm.
+
+Any changes to the schedule will be reflected here, so check this page often.
+Or [subscribe](subscribe.qmd) and we will send you the coming week's talk every
+Sunday.
+
+## Fall 2026 {.section-head}
 
 ::: {.callout-warning title="Two talks meet in a different room"}
 The **September 23** and **October 7** talks are in
@@ -23,9 +46,19 @@ The **September 23** and **October 7** talks are in
 E160. All other talks are in CoDA E160 as usual.
 :::
 
-Any changes to the schedule will be reflected here, so check this page often.
-Or [subscribe](subscribe.qmd) and we will send you the coming week's talk every
-Sunday.
+::: {#talks-fall-2026}
+:::
 
-::: {#talks}
+## Winter 2027 {.section-head}
+
+Ten Wednesdays, January 6 through March 10.
+
+::: {#talks-winter-2027}
+:::
+
+## Spring 2027 {.section-head}
+
+Ten Wednesdays, March 31 through June 2.
+
+::: {#talks-spring-2027}
 :::
