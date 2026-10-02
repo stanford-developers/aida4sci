@@ -445,6 +445,47 @@ h2.section-head {
   margin: 3rem 0 1.5rem;
 }
 
+// ------------------------------------------------------------ quarter nav
+//
+// Schedule page: three chips that jump to a quarter's section. Same
+// monospace small caps as the eyebrows, so they read as wayfinding rather
+// than as content.
+
+.quarter-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin: 1.75rem 0 0.5rem;
+
+  a {
+    font-family: ui-monospace, "SF Mono", Menlo, monospace;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: $cardinal;
+    background: $fog;
+    border: 1px solid $rule;
+    border-radius: 999px;
+    padding: 0.45rem 1rem;
+    text-decoration: none;
+    transition: border-color 0.15s ease, background 0.15s ease;
+
+    &:hover,
+    &:focus-visible {
+      border-color: $cardinal;
+      background: rgba($cardinal, 0.06);
+    }
+  }
+}
+
+// The quarter headings are jump targets (from the chips above and from
+// links elsewhere); pandoc puts the id on the <section> it wraps around each
+// heading, so that is what needs clearance from the pinned navbar.
+section.level2 {
+  scroll-margin-top: 4.5rem;
+}
+
 // ------------------------------------------------- info cards and organizers
 
 .info-cards {

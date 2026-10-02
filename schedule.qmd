@@ -28,15 +28,21 @@ header-includes: |
 
 The seminar meets **Wednesdays, 4:30–5:30 pm** in
 [CoDA E160](https://campus-map.stanford.edu/?srch=CoDA), in person only,
-through all three quarters of the academic year:
-[Fall 2026](#fall-2026), [Winter 2027](#winter-2027), and
-[Spring 2027](#spring-2027). Each talk below states its room, and any talk
-held elsewhere is flagged. Speakers for Winter and Spring are added here as
-they confirm.
+through all three quarters of the academic year. Each talk below states its
+room, and any talk held elsewhere is flagged. Speakers for Winter and Spring
+are added here as they confirm.
 
 Any changes to the schedule will be reflected here, so check this page often.
 Or [subscribe](subscribe.qmd) and we will send you the coming week's talk every
 Sunday.
+
+```{=html}
+<nav class="quarter-nav" aria-label="Jump to a quarter">
+<a href="#fall-2026">Fall 2026</a>
+<a href="#winter-2027">Winter 2027</a>
+<a href="#spring-2027">Spring 2027</a>
+</nav>
+```
 
 ## Fall 2026 {.section-head}
 

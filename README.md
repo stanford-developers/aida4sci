@@ -148,7 +148,7 @@ Everything flows from the YAML files, so the whole year is wired up when:
   `speakers/winter-2027.yml`), with one entry per seminar Wednesday —
   `tba: true` until a speaker confirms;
 - `schedule.qmd` has a listing (and a heading plus `::: {#id}` block) for
-  each file;
+  each file, and a chip for it in the `quarter-nav` jump bar;
 - `index.qmd` lists each file under the `upnext` listing's `contents`.
 
 The calendar feed needs nothing: `tools/gen_ics.py` reads every file in
@@ -167,13 +167,25 @@ in place when a name goes in.
 3. Set the Bookings page's availability to match, one window per quarter
    with the breaks between them not bookable.
 
-### Archiving a finished year
+### Archiving a finished quarter
 
-Create `past/<season>-<year>.qmd` for each quarter, with the same listing
-front matter pointing at its YAML file, and link them from `past.qmd`. Then
-remove those quarters from `schedule.qmd` and from the `upnext` contents in
-`index.qmd`. Leave the YAML files where they are — the archive pages and
-the calendar feed keep reading them.
+Once a quarter's last talk has happened (for Fall 2026, after December 2):
+
+1. Create `past/<season>-<year>.qmd` (e.g. `past/fall-2026.qmd`) with a
+   title, the plate `header-includes`, and the same listing front matter
+   as `schedule.qmd` but pointing only at that quarter's YAML file.
+2. Link it from `past.qmd`, replacing the "no past schedules yet" text
+   the first time.
+3. Remove the quarter from `schedule.qmd`: its listing, its heading and
+   `::: {#id}` block, its chip in the jump bar, and any callout that was
+   specific to it (the Packard 101 notice is a Fall 2026 one).
+4. Remove its YAML file from the `upnext` contents in `index.qmd`, and
+   drop any quarter-specific prose from the Logistics section there.
+
+Leave the YAML file where it is — the archive page and the calendar feed
+keep reading it. A deep link such as `schedule.html#2026-09-23` from an
+old email will no longer land on the card, but the talk stays browsable
+in the archive.
 
 ## Structure
 

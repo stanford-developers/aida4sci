@@ -16,6 +16,8 @@ titles, and abstracts remain browsable:
 <!--
 As quarters complete, add entries like:
 
-- [Fall 2026](past/2026-fall.qmd)
-- [Winter 2027](past/2027-winter.qmd)
+- [Fall 2026](past/fall-2026.qmd)
+- [Winter 2027](past/winter-2027.qmd)
+
+See "Archiving a finished quarter" in README.md.
 -->
