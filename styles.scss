@@ -447,15 +447,16 @@ h2.section-head {
 
 // ------------------------------------------------------------ quarter nav
 //
-// Schedule page: three chips that jump to a quarter's section. Same
-// monospace small caps as the eyebrows, so they read as wayfinding rather
-// than as content.
+// Schedule page: three chips that jump to a quarter's section, sitting
+// first under the masthead. Same monospace small caps as the eyebrows, so
+// they read as wayfinding rather than as content. The masthead already
+// leaves 2.75rem below itself, so no top margin here.
 
 .quarter-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
-  margin: 1.75rem 0 0.5rem;
+  margin: 0 0 1.5rem;
 
   a {
     font-family: ui-monospace, "SF Mono", Menlo, monospace;
