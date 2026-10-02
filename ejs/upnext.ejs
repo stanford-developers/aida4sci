@@ -49,7 +49,7 @@ var roomUrl = next && next.location_url ? next.location_url : mapLink(room);
 <span class="upnext-eyebrow">Up next &middot; <%= next.display_date %></span>
 <h2 class="upnext-name"><%= next.name %></h2>
 <% if (next.affiliation) { %><div class="upnext-affiliation"><%= next.affiliation %></div><% } %>
-<% if (next.title) { %><p class="upnext-talk"><%= next.title %></p><% } %>
+<% if (next.title) { %><p class="upnext-talk"><%= next.title %></p><% } else { %><p class="upnext-talk talk-title-tba">Title and abstract to be announced</p><% } %>
 <% if (roomChanged) { %>
 <p class="room-notice"><strong>Different room this week:</strong> <a href="<%= roomUrl %>"><%= room %></a>, not <%= DEFAULT_ROOM %>.</p>
 <% } else { %>

@@ -394,6 +394,8 @@ main.content > header#title-block-header {
     font-size: 1.05rem;
     color: $cool-grey;
     margin: 0 0 0.75rem;
+
+    &.talk-title-tba { font-style: italic; color: $stone; }
   }
 
   // time and the usual room, stated plainly so the block stands on its own
@@ -576,6 +578,14 @@ h2.section-head {
     font-weight: 600;
     color: $stanford-black;
     margin-bottom: 0.6rem;
+  }
+
+  // a confirmed speaker whose title has not arrived yet (the templates print
+  // this line whenever `title` is absent; it goes away when the title lands)
+  .talk-title-tba {
+    font-weight: 500;
+    font-style: italic;
+    color: $stone;
   }
 
   .talk-abstract {

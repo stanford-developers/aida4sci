@@ -62,7 +62,7 @@ function roomUrl(item) { return item.location_url ?? mapLink(roomOf(item)); }
 <% if (item.url) { %><a href="<%= item.url %>"><%= item.name %></a><% } else { %><%= item.name %><% } %>
 </h2>
 <% if (item.affiliation) { %><div class="talk-affiliation"><%= item.affiliation %></div><% } %>
-<% if (item.title) { %><div class="talk-title"><%= item.title %></div><% } %>
+<% if (item.title) { %><div class="talk-title"><%= item.title %></div><% } else { %><div class="talk-title talk-title-tba">Title and abstract to be announced</div><% } %>
 <% if (item.abstract) { %><div class="talk-abstract"><%= item.abstract %></div><% } %>
 <% if (item.bio) { %><div class="talk-bio"><strong>Bio:</strong> <%= item.bio %></div><% } %>
 </div>

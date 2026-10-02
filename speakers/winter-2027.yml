@@ -34,7 +34,11 @@
 
 - date: 2027-01-13
   display_date: "January 13"
-  tba: true
+  name: "E.J. Chichilnisky"
+  url: "https://profiles.stanford.edu/chichilnisky"
+  affiliation: "Stanford University"
+  photo: "images/speakers/ej-chichilnisky.jpg"
+  # title and abstract to come
 
 - date: 2027-01-20
   display_date: "January 20"
@@ -42,7 +46,11 @@
 
 - date: 2027-01-27
   display_date: "January 27"
-  tba: true
+  name: "Emma Alexander"
+  url: "https://www.alexander.vision/emma"
+  affiliation: "Northwestern University"
+  photo: "images/speakers/emma-alexander.jpg"
+  # title and abstract to come
 
 - date: 2027-02-03
   display_date: "February 3"
@@ -58,11 +66,19 @@
 
 - date: 2027-02-24
   display_date: "February 24"
-  tba: true
+  name: "Russ Poldrack"
+  url: "https://profiles.stanford.edu/russell-poldrack"
+  affiliation: "Stanford University"
+  photo: "images/speakers/russ-poldrack.jpg"
+  # title and abstract to come
 
 - date: 2027-03-03
   display_date: "March 3"
-  tba: true
+  name: "Azalia Mirhoseini"
+  url: "https://www.azaliamirhoseini.com/"
+  affiliation: "Stanford University"
+  photo: "images/speakers/azalia-mirhoseini.jpg"
+  # title and abstract to come
 
 - date: 2027-03-10
   display_date: "March 10"
