@@ -54,6 +54,11 @@
 
 - date: 2027-05-12
   display_date: "May 12"
+  name: "Mohsen Bayati"
+  url: "https://web.stanford.edu/~bayati/"
+  affiliation: "Stanford University"
+  photo: "images/speakers/mohsen-bayati.jpg"
+  # title and abstract to come
   tba: true
 
 - date: 2027-05-19
