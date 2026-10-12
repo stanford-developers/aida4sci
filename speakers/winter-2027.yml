@@ -42,7 +42,11 @@
 
 - date: 2027-01-20
   display_date: "January 20"
-  tba: true
+  name: "Ben Domingue"
+  url: "https://profiles.stanford.edu/benjamin-domingue"
+  affiliation: "Stanford University"
+  photo: "images/speakers/ben-domingue.jpg"
+  # title and abstract to come
 
 - date: 2027-01-27
   display_date: "January 27"
