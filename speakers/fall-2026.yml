@@ -258,3 +258,29 @@
   url: "https://profiles.stanford.edu/leonidas-guibas"
   affiliation: "Stanford University"
   photo: "images/speakers/leonidas-guibas.jpg"
+  title: >-
+    Learning the Geometry of the Physical World: From Shape Understanding to Scientific Discovery
+  abstract: >-
+    Much of science is fundamentally geometric. Scientific
+    observations arise on irregular domains, and scientific
+    discoveries often depend on comparing structures, identifying
+    correspondences, and understanding how quantities vary or
+    transform. In this talk we first discuss the PointNet and
+    PointNet++ architectures that helped free deep learning from the
+    tyranny of regular grids, introducing models capable of learning
+    directly from unordered geometric data. This made deep learning
+    applicable to a much broader class of structures, including those
+    that arise naturally in science—from molecules and particle
+    collisions to the distribution of galaxies. We transition to
+    presenting our Vector Neurons work aimed at designing neural
+    architectures with built in invariances and equivariances
+    important in physics. Finally we show how our work on functional
+    maps transformed correspondence from a problem of matching
+    individual points into a problem of transporting functions and
+    information between geometric domains. This provides a powerful
+    mathematical foundation for comparing scientific structures,
+    transferring measurements, and identifying meaningful patterns of
+    variation. Together, these ideas suggest a path toward AI systems
+    that understand not just individual scientific observations, but
+    the structural relationships connecting them.
+  
