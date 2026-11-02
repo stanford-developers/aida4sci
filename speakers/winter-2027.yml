@@ -62,7 +62,11 @@
 
 - date: 2027-02-10
   display_date: "February 10"
-  tba: true
+  name: "Emily B. Fox"
+  url: "https://emilybfox.su.domains/"
+  affiliation: "Stanford University"
+  photo: "images/speakers/emily-fox.jpg"
+
 
 - date: 2027-02-17
   display_date: "February 17"
