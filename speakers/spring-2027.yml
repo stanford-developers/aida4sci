@@ -38,7 +38,12 @@
 
 - date: 2027-04-14
   display_date: "April 14"
-  tba: true
+  name: "Anastasios Angelopoulos"
+  url: "https://angelopoulos.ai/"
+  affiliation: "Arena"
+  photo: "images/speakers/anastasios-angelopoulos.jpg"
+  # title and abstract to come
+
 
 - date: 2027-04-21
   display_date: "April 21"
